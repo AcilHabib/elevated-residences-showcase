@@ -1,22 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
 import { useState } from "react";
 import { Phone, Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal } from "@/components/Reveal";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — P.B.A Béjaïa" },
-      { name: "description", content: "Contactez la promotion immobilière Benchallal A. Halim. Téléphone, WhatsApp, email." },
-    ],
-  }),
-  component: ContactPage,
-});
-
 const phones = ["0770 27 57 55", "0770 03 18 69", "0770 27 57 11"];
 
-function ContactPage() {
+export default function ContactPage() {
   const [sending, setSending] = useState(false);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -34,12 +24,15 @@ function ContactPage() {
       <section className="pt-40 pb-12">
         <div className="container-luxury">
           <Reveal>
-            <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Contact</p>
+            <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+              Contact
+            </p>
             <h1 className="mt-4 font-display text-5xl md:text-7xl leading-tight max-w-4xl">
               Parlons de votre <span className="italic text-gradient-gold">projet</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Notre équipe commerciale vous répond avec attention. Téléphone, WhatsApp, email ou formulaire — choisissez votre canal.
+              Notre équipe commerciale vous répond avec attention. Téléphone, WhatsApp, email ou
+              formulaire — choisissez votre canal.
             </p>
           </Reveal>
         </div>
@@ -60,7 +53,10 @@ function ContactPage() {
                 <ul className="space-y-2">
                   {phones.map((p) => (
                     <li key={p}>
-                      <a href={`tel:+213${p.replace(/\s/g, "").slice(1)}`} className="block px-4 py-3 rounded-xl bg-muted/40 hover:bg-gold/10 transition-colors font-display text-lg text-foreground hover:text-gold">
+                      <a
+                        href={`tel:+213${p.replace(/\s/g, "").slice(1)}`}
+                        className="block px-4 py-3 rounded-xl bg-muted/40 hover:bg-gold/10 transition-colors font-display text-lg text-foreground hover:text-gold"
+                      >
                         {p}
                       </a>
                     </li>
@@ -105,7 +101,9 @@ function ContactPage() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Adresse</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Adresse
+                  </p>
                   <p className="font-display text-lg">Béjaïa · Algérie</p>
                 </div>
               </div>
@@ -115,7 +113,10 @@ function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-3">
             <Reveal delay={0.1}>
-              <form onSubmit={onSubmit} className="rounded-3xl p-8 md:p-10 bg-card border border-border">
+              <form
+                onSubmit={onSubmit}
+                className="rounded-3xl p-8 md:p-10 bg-card border border-border"
+              >
                 <h3 className="font-display text-3xl">Envoyez-nous un message</h3>
                 <p className="mt-2 text-sm text-muted-foreground">Nous vous répondons sous 24h.</p>
 
@@ -129,7 +130,9 @@ function ContactPage() {
                     <Field label="Sujet" name="subject" />
                   </div>
                   <div className="sm:col-span-2">
-                    <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Message</label>
+                    <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                      Message
+                    </label>
                     <textarea
                       name="message"
                       rows={5}
@@ -173,10 +176,22 @@ function ContactPage() {
   );
 }
 
-function Field({ label, name, type = "text", required }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">{label}</label>
+      <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+        {label}
+      </label>
       <input
         type={type}
         name={name}

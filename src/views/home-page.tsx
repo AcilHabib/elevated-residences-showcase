@@ -1,9 +1,24 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import {
-  Shield, Waves, Car, Camera, Building2, Sparkles, Trees, ArrowRight,
-  Thermometer, Square, Volume2, ChefHat, Gem, Layers, Download
+  Shield,
+  Waves,
+  Car,
+  Camera,
+  Building2,
+  Sparkles,
+  Trees,
+  ArrowRight,
+  Thermometer,
+  Square,
+  Volume2,
+  ChefHat,
+  Gem,
+  Layers,
+  Download,
 } from "lucide-react";
 import heroImg from "@/assets/hero-residence.jpg";
 import aerialImg from "@/assets/aerial-view.jpg";
@@ -11,36 +26,66 @@ import interiorImg from "@/assets/interior-luxury.jpg";
 import { Reveal } from "@/components/Reveal";
 import { Counter } from "@/components/Counter";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "P.B.A — Résidence de prestige à Béjaïa" },
-      { name: "description", content: "Résidence sécurisée à 400 m de la mer à Béjaïa. Confort, qualité de vie et finitions premium." },
-    ],
-  }),
-  component: HomePage,
-});
-
 const advantages = [
-  { icon: Waves, title: "400 m de la mer", desc: "Une localisation d'exception, à quelques pas du rivage." },
-  { icon: Shield, title: "Résidence sécurisée", desc: "Enceinte clôturée avec contrôle d'accès permanent." },
-  { icon: Camera, title: "Surveillance 24/7", desc: "Vidéosurveillance et présence continue sur site." },
+  {
+    icon: Waves,
+    title: "400 m de la mer",
+    desc: "Une localisation d'exception, à quelques pas du rivage.",
+  },
+  {
+    icon: Shield,
+    title: "Résidence sécurisée",
+    desc: "Enceinte clôturée avec contrôle d'accès permanent.",
+  },
+  {
+    icon: Camera,
+    title: "Surveillance 24/7",
+    desc: "Vidéosurveillance et présence continue sur site.",
+  },
   { icon: Waves, title: "Deux piscines", desc: "Bassins paysagers pour adultes et enfants." },
   { icon: Car, title: "Grand parking", desc: "Stationnement privatif sécurisé pour résidents." },
-  { icon: Trees, title: "Espaces communs", desc: "Jardins, allées et lieux de vie pensés pour vous." },
-  { icon: Sparkles, title: "Confort & tranquillité", desc: "Un cadre serein, à l'abri de l'agitation urbaine." },
+  {
+    icon: Trees,
+    title: "Espaces communs",
+    desc: "Jardins, allées et lieux de vie pensés pour vous.",
+  },
+  {
+    icon: Sparkles,
+    title: "Confort & tranquillité",
+    desc: "Un cadre serein, à l'abri de l'agitation urbaine.",
+  },
 ];
 
 const features = [
-  { icon: Thermometer, title: "Pré-installation chauffage central", desc: "Système prêt pour un confort thermique optimal." },
-  { icon: Square, title: "Double vitrage à gaz isolant", desc: "Performance acoustique et thermique de premier ordre." },
-  { icon: Volume2, title: "Isolation phonique renforcée", desc: "Une tranquillité absolue dans chaque pièce." },
-  { icon: ChefHat, title: "Cuisine entièrement équipée", desc: "Aménagements modernes prêts à vivre." },
+  {
+    icon: Thermometer,
+    title: "Pré-installation chauffage central",
+    desc: "Système prêt pour un confort thermique optimal.",
+  },
+  {
+    icon: Square,
+    title: "Double vitrage à gaz isolant",
+    desc: "Performance acoustique et thermique de premier ordre.",
+  },
+  {
+    icon: Volume2,
+    title: "Isolation phonique renforcée",
+    desc: "Une tranquillité absolue dans chaque pièce.",
+  },
+  {
+    icon: ChefHat,
+    title: "Cuisine entièrement équipée",
+    desc: "Aménagements modernes prêts à vivre.",
+  },
   { icon: Gem, title: "Finitions premium", desc: "Marbre, bois noble et détails soignés." },
-  { icon: Layers, title: "Matériaux haut de gamme", desc: "Sélection rigoureuse de matériaux durables." },
+  {
+    icon: Layers,
+    title: "Matériaux haut de gamme",
+    desc: "Sélection rigoureuse de matériaux durables.",
+  },
 ];
 
-function HomePage() {
+export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -51,7 +96,11 @@ function HomePage() {
       {/* HERO */}
       <section ref={heroRef} className="relative h-[100vh] min-h-[700px] w-full overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0">
-          <img src={heroImg} alt="Résidence de prestige Benchallal" className="h-full w-full object-cover animate-slow-zoom" />
+          <img
+            src={heroImg.src}
+            alt="Résidence de prestige Benchallal"
+            className="h-full w-full object-cover animate-slow-zoom"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,color-mix(in_oklab,var(--gold)_25%,transparent),transparent_50%)]" />
         </motion.div>
@@ -72,28 +121,39 @@ function HomePage() {
           ))}
         </div>
 
-        <motion.div style={{ opacity }} className="relative z-10 h-full container-luxury flex items-end pb-32">
+        <motion.div
+          style={{ opacity }}
+          className="relative z-10 h-full container-luxury flex items-end pb-32"
+        >
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-3 glass rounded-full px-4 py-2 mb-8 animate-fade-in">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-xs uppercase tracking-[0.25em] text-foreground/90">Béjaïa · Algérie</span>
+              <span className="text-xs uppercase tracking-[0.25em] text-foreground/90">
+                Béjaïa · Algérie
+              </span>
             </div>
 
             <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-foreground animate-fade-up">
               Votre résidence
               <br />
               <span className="text-gradient-gold italic">de prestige</span>
-              <br />
-              à Béjaïa
+              <br />à Béjaïa
             </h1>
 
-            <p className="mt-8 max-w-xl text-lg text-foreground/80 leading-relaxed" style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.2s both" }}>
-              Confort, sécurité et qualité de vie à seulement <span className="text-gold font-medium">400 mètres de la mer</span>.
+            <p
+              className="mt-8 max-w-xl text-lg text-foreground/80 leading-relaxed"
+              style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.2s both" }}
+            >
+              Confort, sécurité et qualité de vie à seulement{" "}
+              <span className="text-gold font-medium">400 mètres de la mer</span>.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4" style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.4s both" }}>
+            <div
+              className="mt-10 flex flex-wrap gap-4"
+              style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.4s both" }}
+            >
               <Link
-                to="/residence"
+                href="/residence"
                 className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[var(--gold)] to-[oklch(from_var(--gold)_calc(l+0.08)_c_h)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-[1.03]"
               >
                 Découvrir le projet
@@ -124,7 +184,9 @@ function HomePage() {
                   <div className="font-display text-3xl md:text-4xl text-gold">
                     <Counter to={s.v} suffix={s.s} />
                   </div>
-                  <div className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">{s.l}</div>
+                  <div className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {s.l}
+                  </div>
                 </div>
               ))}
             </div>
@@ -138,9 +200,12 @@ function HomePage() {
         <div className="container-luxury relative">
           <Reveal>
             <div className="max-w-2xl mb-16">
-              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Vos avantages</p>
+              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+                Vos avantages
+              </p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
-                Un cadre de vie pensé pour <span className="italic text-gradient-gold">l'exception</span>
+                Un cadre de vie pensé pour{" "}
+                <span className="italic text-gradient-gold">l'exception</span>
               </h2>
             </div>
           </Reveal>
@@ -169,16 +234,26 @@ function HomePage() {
         <div className="container-luxury grid lg:grid-cols-2 gap-16 items-center">
           <Reveal>
             <div>
-              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Vue d'ensemble</p>
+              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+                Vue d'ensemble
+              </p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
                 Six blocs résidentiels au cœur d'un écrin paysager
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                Pensée comme un véritable village méditerranéen, la résidence déploie six blocs d'architecture contemporaine
-                autour de jardins luxuriants et de bassins paysagers. Un équilibre rare entre intimité et art de vivre.
+                Pensée comme un véritable village méditerranéen, la résidence déploie six blocs
+                d'architecture contemporaine autour de jardins luxuriants et de bassins paysagers.
+                Un équilibre rare entre intimité et art de vivre.
               </p>
               <ul className="mt-8 space-y-3 text-sm">
-                {["Bloc A — 5 étages", "Bloc B — 5 étages", "Bloc C — 5 étages", "Bloc D — 5 étages", "Bloc E — 5 étages", "Bloc F — 5 étages"].map((b) => (
+                {[
+                  "Bloc A — 5 étages",
+                  "Bloc B — 5 étages",
+                  "Bloc C — 5 étages",
+                  "Bloc D — 5 étages",
+                  "Bloc E — 5 étages",
+                  "Bloc F — 5 étages",
+                ].map((b) => (
                   <li key={b} className="flex items-center gap-3">
                     <span className="h-px w-6 bg-gold" />
                     <span className="text-foreground/90">{b}</span>
@@ -186,7 +261,7 @@ function HomePage() {
                 ))}
               </ul>
               <Link
-                to="/residence"
+                href="/residence"
                 className="mt-10 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-gold hover:gap-3 transition-all"
               >
                 Explorer la résidence <ArrowRight className="h-4 w-4" />
@@ -196,10 +271,17 @@ function HomePage() {
 
           <Reveal delay={0.15}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)] group">
-              <img src={aerialImg} alt="Vue aérienne de la résidence" loading="lazy" className="h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-105" />
+              <img
+                src={aerialImg.src}
+                alt="Vue aérienne de la résidence"
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 glass-strong rounded-2xl p-5">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-gold font-semibold">Vue aérienne</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] text-gold font-semibold">
+                  Vue aérienne
+                </p>
                 <p className="mt-1 font-display text-xl">Mer Méditerranée à 400 m</p>
               </div>
             </div>
@@ -212,7 +294,9 @@ function HomePage() {
         <div className="container-luxury">
           <Reveal>
             <div className="max-w-2xl mb-16">
-              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Finitions intérieures</p>
+              <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+                Finitions intérieures
+              </p>
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
                 Chaque détail, <span className="italic text-gradient-gold">une signature</span>
               </h2>
@@ -222,7 +306,12 @@ function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <Reveal>
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden lg:sticky lg:top-28">
-                <img src={interiorImg} alt="Intérieur d'appartement de luxe" loading="lazy" className="h-full w-full object-cover" />
+                <img
+                  src={interiorImg.src}
+                  alt="Intérieur d'appartement de luxe"
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </Reveal>
 
@@ -254,11 +343,12 @@ function HomePage() {
                   Réservez votre <span className="italic text-gradient-gold">visite privée</span>
                 </h2>
                 <p className="mt-6 text-primary-foreground/80 max-w-xl mx-auto">
-                  Notre équipe commerciale vous accueille pour une présentation personnalisée du projet et des disponibilités.
+                  Notre équipe commerciale vous accueille pour une présentation personnalisée du
+                  projet et des disponibilités.
                 </p>
                 <div className="mt-10 flex flex-wrap justify-center gap-4">
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.03] transition-transform"
                   >
                     Demander un rendez-vous <ArrowRight className="h-4 w-4" />

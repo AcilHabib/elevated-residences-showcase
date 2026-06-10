@@ -1,4 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun, Globe } from "lucide-react";
 import { Logo } from "./Logo";
@@ -11,7 +14,7 @@ export function Header() {
   const { theme, toggle } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const pathname = usePathname();
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -35,11 +38,11 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "glass-strong shadow-[var(--shadow-soft)]" : "bg-transparent"
+        scrolled ? "glass-strong shadow-[var(--shadow-soft)]" : "bg-transparent",
       )}
     >
       <div className="container-luxury flex h-20 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Logo className="h-11" />
         </Link>
 
@@ -47,12 +50,11 @@ export function Header() {
           {nav.map((item) => (
             <Link
               key={item.to}
-              to={item.to}
+              href={item.to}
               className={cn(
                 "relative px-3 py-2 text-[13px] font-medium uppercase tracking-[0.12em] transition-colors",
-                pathname === item.to ? "text-gold" : "text-foreground/80 hover:text-foreground"
+                pathname === item.to ? "text-gold" : "text-foreground/80 hover:text-foreground",
               )}
-              activeProps={{ className: "text-gold" }}
             >
               {item.label}
               {pathname === item.to && (
@@ -71,7 +73,9 @@ export function Header() {
                 onClick={() => setLocale(l)}
                 className={cn(
                   "rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase transition-colors",
-                  locale === l ? "bg-gold text-gold-foreground" : "text-muted-foreground hover:text-foreground"
+                  locale === l
+                    ? "bg-gold text-gold-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {l}
@@ -88,7 +92,7 @@ export function Header() {
           </button>
 
           <Link
-            to="/contact"
+            href="/contact"
             className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-[var(--gold)] to-[oklch(from_var(--gold)_calc(l+0.08)_c_h)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-[1.03]"
           >
             {t("cta.rdv")}
@@ -110,7 +114,7 @@ export function Header() {
             {nav.map((item) => (
               <Link
                 key={item.to}
-                to={item.to}
+                href={item.to}
                 className="py-3 text-sm font-medium uppercase tracking-[0.12em] text-foreground/80"
               >
                 {item.label}
@@ -123,7 +127,9 @@ export function Header() {
                   onClick={() => setLocale(l)}
                   className={cn(
                     "rounded-full px-3 py-1.5 text-xs font-semibold uppercase",
-                    locale === l ? "bg-gold text-gold-foreground" : "bg-muted text-muted-foreground"
+                    locale === l
+                      ? "bg-gold text-gold-foreground"
+                      : "bg-muted text-muted-foreground",
                   )}
                 >
                   {l}

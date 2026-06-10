@@ -1,17 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
 import { MapPin, Waves, Car, ShoppingBag, GraduationCap, Heart } from "lucide-react";
 import aerialImg from "@/assets/aerial-view.jpg";
 import { Reveal } from "@/components/Reveal";
-
-export const Route = createFileRoute("/location")({
-  head: () => ({
-    meta: [
-      { title: "Localisation — Béjaïa · P.B.A" },
-      { name: "description", content: "À 400 m de la mer à Béjaïa. Découvrez l'emplacement stratégique de la résidence." },
-    ],
-  }),
-  component: LocationPage,
-});
 
 const nearby = [
   { icon: Waves, name: "Mer Méditerranée", dist: "400 m" },
@@ -22,18 +12,21 @@ const nearby = [
   { icon: MapPin, name: "Centre-ville Béjaïa", dist: "12 min" },
 ];
 
-function LocationPage() {
+export default function LocationPage() {
   return (
     <>
       <section className="pt-40 pb-16">
         <div className="container-luxury">
           <Reveal>
-            <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Localisation</p>
+            <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+              Localisation
+            </p>
             <h1 className="mt-4 font-display text-5xl md:text-7xl leading-tight max-w-4xl">
               Béjaïa, à <span className="italic text-gradient-gold">400 mètres</span> de la mer
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Une adresse rare, au croisement de la nature, de la culture et des commodités urbaines.
+              Une adresse rare, au croisement de la nature, de la culture et des commodités
+              urbaines.
             </p>
           </Reveal>
         </div>
@@ -44,15 +37,25 @@ function LocationPage() {
         <div className="container-luxury">
           <Reveal>
             <div className="relative aspect-[21/9] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)]">
-              <img src={aerialImg} alt="Vue aérienne du site" className="h-full w-full object-cover" />
+              <img
+                src={aerialImg.src}
+                alt="Vue aérienne du site"
+                className="h-full w-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 flex flex-wrap items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">Béjaïa · Algérie</p>
-                  <p className="mt-2 font-display text-3xl md:text-4xl">À 400 m de la côte méditerranéenne</p>
+                  <p className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+                    Béjaïa · Algérie
+                  </p>
+                  <p className="mt-2 font-display text-3xl md:text-4xl">
+                    À 400 m de la côte méditerranéenne
+                  </p>
                 </div>
                 <div className="glass-strong rounded-2xl px-5 py-3">
-                  <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Coordonnées</p>
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                    Coordonnées
+                  </p>
                   <p className="font-display text-lg">36.7525° N · 5.0566° E</p>
                 </div>
               </div>

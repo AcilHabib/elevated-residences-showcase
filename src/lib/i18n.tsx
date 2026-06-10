@@ -1,3 +1,5 @@
+"use client";
+
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type Locale = "fr" | "ar" | "en";
@@ -55,7 +57,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("fr");
 
   useEffect(() => {
-    const stored = (typeof window !== "undefined" && (localStorage.getItem("pba-locale") as Locale)) || "fr";
+    const stored =
+      (typeof window !== "undefined" && (localStorage.getItem("pba-locale") as Locale)) || "fr";
     setLocaleState(stored);
   }, []);
 
@@ -77,6 +80,11 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
 export function useI18n() {
   const ctx = useContext(I18nContext);
-  if (!ctx) return { locale: "fr" as Locale, setLocale: () => {}, t: (k: string) => translations.fr[k] ?? k };
+  if (!ctx)
+    return {
+      locale: "fr" as Locale,
+      setLocale: () => {},
+      t: (k: string) => translations.fr[k] ?? k,
+    };
   return ctx;
 }

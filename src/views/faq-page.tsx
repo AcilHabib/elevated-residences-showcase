@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+"use client";
 import { Reveal } from "@/components/Reveal";
 import {
   Accordion,
@@ -6,16 +6,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-export const Route = createFileRoute("/faq")({
-  head: () => ({
-    meta: [
-      { title: "FAQ — P.B.A Béjaïa" },
-      { name: "description", content: "Crédit bancaire, modes de paiement, tranches, locaux commerciaux, prix : toutes les réponses." },
-    ],
-  }),
-  component: FaqPage,
-});
 
 const faqs = [
   {
@@ -45,7 +35,9 @@ const faqs = [
           {["20%", "15%", "35%", "25%", "5%"].map((p, i) => (
             <div key={p} className="rounded-xl bg-gold/10 border border-gold/30 p-3 text-center">
               <div className="font-display text-2xl text-gold">{p}</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">Tranche {i + 1}</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">
+                Tranche {i + 1}
+              </div>
             </div>
           ))}
         </div>
@@ -54,7 +46,12 @@ const faqs = [
   },
   {
     q: "Des locaux commerciaux sont-ils disponibles ?",
-    a: <p>Oui. Plusieurs surfaces sont proposées afin de répondre à différents besoins commerciaux (F2, F3, F4).</p>,
+    a: (
+      <p>
+        Oui. Plusieurs surfaces sont proposées afin de répondre à différents besoins commerciaux
+        (F2, F3, F4).
+      </p>
+    ),
   },
   {
     q: "Comment sont déterminés les prix ?",
@@ -70,17 +67,20 @@ const faqs = [
   },
 ];
 
-function FaqPage() {
+export default function FaqPage() {
   return (
     <section className="pt-40 pb-32">
       <div className="container-luxury max-w-4xl">
         <Reveal>
-          <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">Questions fréquentes</p>
+          <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
+            Questions fréquentes
+          </p>
           <h1 className="mt-4 font-display text-5xl md:text-6xl leading-tight">
             Toutes les <span className="italic text-gradient-gold">réponses</span>
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Crédit bancaire, modalités de paiement, locaux commerciaux : voici l'essentiel à connaître.
+            Crédit bancaire, modalités de paiement, locaux commerciaux : voici l'essentiel à
+            connaître.
           </p>
         </Reveal>
 

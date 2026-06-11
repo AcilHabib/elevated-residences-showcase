@@ -20,11 +20,12 @@ import {
   Layers,
   Download,
 } from "lucide-react";
-import heroImg from "@/assets/hero-residence.jpg";
-import aerialImg from "@/assets/aerial-view.jpg";
 import interiorImg from "@/assets/interior-luxury.jpg";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { Reveal } from "@/components/Reveal";
+import { SimulationsGallery } from "@/components/SimulationsGallery";
 import { Counter } from "@/components/Counter";
+import { simulationImages } from "@/lib/simulations";
 
 const advantages = [
   {
@@ -96,13 +97,9 @@ export default function HomePage() {
       {/* HERO */}
       <section ref={heroRef} className="relative h-[100vh] min-h-[700px] w-full overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0">
-          <img
-            src={heroImg.src}
-            alt="Résidence de prestige Benchallal"
-            className="h-full w-full object-cover animate-slow-zoom"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,color-mix(in_oklab,var(--gold)_25%,transparent),transparent_50%)]" />
+          <HeroCarousel images={simulationImages} />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/45 to-background" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,color-mix(in_oklab,var(--primary)_20%,transparent),transparent_55%)]" />
         </motion.div>
 
         {/* floating particles */}
@@ -154,7 +151,7 @@ export default function HomePage() {
             >
               <Link
                 href="/residence"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[var(--gold)] to-[oklch(from_var(--gold)_calc(l+0.08)_c_h)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-[1.03]"
+                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
               >
                 Découvrir le projet
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -229,6 +226,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SimulationsGallery
+        images={simulationImages}
+        title="Le projet en images"
+        subtitle="Simulations 3D officielles"
+        columns={4}
+      />
+
       {/* AERIAL VIEW SPLIT */}
       <section className="relative py-32">
         <div className="container-luxury grid lg:grid-cols-2 gap-16 items-center">
@@ -272,7 +276,7 @@ export default function HomePage() {
           <Reveal delay={0.15}>
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)] group">
               <img
-                src={aerialImg.src}
+                src="/images/simulations/04.jpg"
                 alt="Vue aérienne de la résidence"
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"

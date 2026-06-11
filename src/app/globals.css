@@ -48,7 +48,8 @@
     var(--primary) 0%,
     oklch(from var(--primary) calc(l - 0.15) c h) 100%
   );
-  --gradient-gold: linear-gradient(135deg, oklch(from var(--gold) calc(l + 0.08) c h), var(--gold));
+  --gradient-gold: linear-gradient(135deg, var(--primary), var(--gold));
+  --gradient-brand: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
   --gradient-overlay: linear-gradient(
     180deg,
     transparent 0%,
@@ -57,7 +58,7 @@
   );
   --gradient-radial: radial-gradient(
     circle at top right,
-    color-mix(in oklab, var(--gold) 18%, transparent),
+    color-mix(in oklab, var(--primary) 14%, transparent),
     transparent 60%
   );
 
@@ -75,29 +76,31 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.04 260);
 
-  --primary: oklch(0.4 0.16 263);
+  /* P.B.A brand — navy #1B4A97, royal blue, red #D71F26 */
+  --primary: oklch(0.385 0.145 264);
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.95 0.01 250);
-  --secondary-foreground: oklch(0.2 0.04 260);
+  --secondary: oklch(0.94 0.02 264);
+  --secondary-foreground: oklch(0.25 0.08 264);
 
   --muted: oklch(0.95 0.008 250);
-  --muted-foreground: oklch(0.5 0.02 255);
+  --muted-foreground: oklch(0.48 0.03 264);
 
-  --accent: oklch(0.96 0.012 250);
-  --accent-foreground: oklch(0.2 0.04 260);
+  --accent: oklch(0.93 0.03 264);
+  --accent-foreground: oklch(0.25 0.08 264);
 
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.55 0.23 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.9 0.008 250);
-  --input: oklch(0.93 0.008 250);
-  --ring: oklch(0.4 0.16 263);
+  --border: oklch(0.9 0.015 264);
+  --input: oklch(0.93 0.012 264);
+  --ring: oklch(0.385 0.145 264);
 
-  --gold: oklch(0.76 0.12 85);
-  --gold-foreground: oklch(0.18 0.04 260);
+  /* Accent = brand red (reuses gold token across components) */
+  --gold: oklch(0.55 0.23 25);
+  --gold-foreground: oklch(0.99 0 0);
 
-  --brand-red: oklch(0.58 0.23 28);
+  --brand-red: oklch(0.55 0.23 25);
 
   --chart-1: oklch(0.4 0.16 263);
   --chart-2: oklch(0.76 0.12 85);
@@ -125,29 +128,29 @@
   --popover: oklch(0.17 0.012 260);
   --popover-foreground: oklch(0.98 0.005 250);
 
-  --primary: oklch(0.62 0.2 263);
-  --primary-foreground: oklch(0.13 0.01 260);
+  --primary: oklch(0.52 0.17 264);
+  --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.22 0.015 260);
+  --secondary: oklch(0.22 0.03 264);
   --secondary-foreground: oklch(0.98 0.005 250);
 
   --muted: oklch(0.22 0.015 260);
-  --muted-foreground: oklch(0.68 0.02 255);
+  --muted-foreground: oklch(0.68 0.03 264);
 
-  --accent: oklch(0.24 0.018 260);
+  --accent: oklch(0.24 0.04 264);
   --accent-foreground: oklch(0.98 0.005 250);
 
-  --destructive: oklch(0.65 0.24 25);
+  --destructive: oklch(0.62 0.24 25);
   --destructive-foreground: oklch(0.98 0.005 250);
 
   --border: oklch(1 0 0 / 8%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.62 0.2 263);
+  --ring: oklch(0.52 0.17 264);
 
-  --gold: oklch(0.78 0.13 85);
-  --gold-foreground: oklch(0.13 0.01 260);
+  --gold: oklch(0.6 0.24 25);
+  --gold-foreground: oklch(0.99 0 0);
 
-  --brand-red: oklch(0.65 0.24 25);
+  --brand-red: oklch(0.6 0.24 25);
 
   --sidebar: oklch(0.17 0.012 260);
   --sidebar-foreground: oklch(0.98 0.005 250);

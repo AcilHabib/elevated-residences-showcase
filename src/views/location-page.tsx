@@ -1,7 +1,8 @@
 "use client";
 import { MapPin, Waves, Car, ShoppingBag, GraduationCap, Heart } from "lucide-react";
-import aerialImg from "@/assets/aerial-view.jpg";
 import { Reveal } from "@/components/Reveal";
+import { SimulationsGallery } from "@/components/SimulationsGallery";
+import { locationGallery } from "@/lib/simulations";
 
 const nearby = [
   { icon: Waves, name: "Mer Méditerranée", dist: "400 m" },
@@ -38,7 +39,7 @@ export default function LocationPage() {
           <Reveal>
             <div className="relative aspect-[21/9] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)]">
               <img
-                src={aerialImg.src}
+                src="/images/simulations/11.jpg"
                 alt="Vue aérienne du site"
                 className="h-full w-full object-cover"
               />
@@ -104,6 +105,14 @@ export default function LocationPage() {
           </div>
         </div>
       </section>
+
+      <SimulationsGallery
+        images={locationGallery}
+        title="Le site et son environnement"
+        subtitle="Vues officielles"
+        columns={3}
+        className="pb-32"
+      />
     </>
   );
 }

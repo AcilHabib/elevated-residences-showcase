@@ -1,6 +1,5 @@
 "use client";
 import { Store, ArrowRight } from "lucide-react";
-import commercialImg from "@/assets/commercial.jpg";
 import { Reveal } from "@/components/Reveal";
 
 const categories = [
@@ -14,7 +13,11 @@ export default function CommercialPage() {
     <>
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={commercialImg.src} alt="" className="h-full w-full object-cover opacity-25" />
+          <img
+            src="/images/simulations/05.jpg"
+            alt=""
+            className="h-full w-full object-cover opacity-25"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
         </div>
         <div className="container-luxury relative">

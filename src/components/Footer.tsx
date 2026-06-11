@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="relative mt-32 border-t border-border bg-surface/50">
       <div className="container-luxury py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo className="h-12 mb-6" />
+          <Logo className="h-16 md:h-20 min-w-[220px] md:min-w-[260px] mb-6" />
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
             Promoteur immobilier de prestige à Béjaïa. Bâtir un cadre de vie d&apos;exception, à 400
             mètres de la mer.

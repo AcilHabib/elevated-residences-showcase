@@ -41,9 +41,9 @@ export function Header() {
         scrolled ? "glass-strong shadow-[var(--shadow-soft)]" : "bg-transparent",
       )}
     >
-      <div className="container-luxury flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Logo className="h-11" />
+      <div className="container-luxury flex h-24 md:h-28 items-center justify-between gap-4">
+        <Link href="/" className="flex shrink-0 items-center">
+          <Logo />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -93,7 +93,7 @@ export function Header() {
 
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-[var(--gold)] to-[oklch(from_var(--gold)_calc(l+0.08)_c_h)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-foreground shadow-[var(--shadow-gold)] transition-transform hover:scale-[1.03]"
+            className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
           >
             {t("cta.rdv")}
           </Link>

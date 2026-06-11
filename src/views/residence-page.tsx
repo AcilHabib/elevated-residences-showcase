@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { ArrowRight, Layers, Home } from "lucide-react";
-import aerialImg from "@/assets/aerial-view.jpg";
-import blockImg from "@/assets/block-render.jpg";
 import { Reveal } from "@/components/Reveal";
+import { SimulationsGallery } from "@/components/SimulationsGallery";
+import { residenceGallery } from "@/lib/simulations";
 
 const blocks = ["A", "B", "C", "D", "E", "F"].map((id) => ({
   id,
@@ -18,7 +18,11 @@ export default function ResidencePage() {
     <>
       <section className="relative pt-40 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={aerialImg.src} alt="" className="h-full w-full object-cover opacity-30" />
+          <img
+            src="/images/simulations/03.jpg"
+            alt=""
+            className="h-full w-full object-cover opacity-30"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
         </div>
         <div className="container-luxury relative">
@@ -45,7 +49,7 @@ export default function ResidencePage() {
           <Reveal>
             <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)]">
               <img
-                src={aerialImg.src}
+                src="/images/simulations/08.jpg"
                 alt="Plan d'implantation"
                 className="h-full w-full object-cover"
               />
@@ -91,7 +95,7 @@ export default function ResidencePage() {
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
-                      src={blockImg.src}
+                      src={residenceGallery[(i + 1) % residenceGallery.length].src}
                       alt={b.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
@@ -121,6 +125,14 @@ export default function ResidencePage() {
           </div>
         </div>
       </section>
+
+      <SimulationsGallery
+        images={residenceGallery}
+        title="Visualisez la résidence"
+        subtitle="Rendus 3D officiels"
+        columns={3}
+        className="pb-32"
+      />
     </>
   );
 }

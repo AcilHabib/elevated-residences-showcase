@@ -7,6 +7,9 @@ export const RESIDENCE_COORDS = {
 
 export const RESIDENCE_NAME = "Résidence Azimour";
 
+export const PROMO_VIDEO_SRC = "/videos/pba-residence.mp4";
+export const PROMO_VIDEO_POSTER = "/images/simulations/03.jpg";
+
 export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${RESIDENCE_COORDS.lat},${RESIDENCE_COORDS.lng}&z=17&output=embed`;
 
 export const MAPS_LINK_URL = `https://www.google.com/maps/place/${RESIDENCE_COORDS.lat},${RESIDENCE_COORDS.lng}`;

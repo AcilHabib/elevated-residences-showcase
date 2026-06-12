@@ -53,6 +53,13 @@ const fr: Dict = {
   "home.adv.7.desc": "Jardins, allées et lieux de vie paysagers pensés pour vous.",
   "home.adv.8.title": "Confort & tranquillité",
   "home.adv.8.desc": "Un cadre serein, à l'abri de l'agitation urbaine.",
+  "video.subtitle": "Découvrez en vidéo",
+  "video.title": "La résidence &",
+  "video.titleAccent": "P.B.A",
+  "video.desc":
+    "Une présentation complète de la Résidence Azimour et de Promotion Benchallal A. Halim — le projet, les espaces et la vision du promoteur.",
+  "video.play": "Lire la vidéo",
+
   "home.gallery.title": "Le projet en images",
   "home.gallery.subtitle": "Simulations 3D officielles",
   "home.overview.subtitle": "Vue d'ensemble",
@@ -231,6 +238,13 @@ const en: Dict = {
   "home.adv.7.desc": "Landscaped gardens, walkways and shared living spaces.",
   "home.adv.8.title": "Comfort & tranquility",
   "home.adv.8.desc": "A serene setting, away from urban hustle.",
+  "video.subtitle": "Watch the film",
+  "video.title": "The residence &",
+  "video.titleAccent": "P.B.A",
+  "video.desc":
+    "A full presentation of Azimour Residence and Promotion Benchallal A. Halim — the project, the spaces and the developer's vision.",
+  "video.play": "Play video",
+
   "home.gallery.title": "The project in images",
   "home.gallery.subtitle": "Official 3D renderings",
   "home.overview.subtitle": "Overview",
@@ -402,6 +416,12 @@ const ar: Dict = {
   "home.adv.7.desc": "حدائق وممرات ومساحات معيشة منسقة.",
   "home.adv.8.title": "راحة وهدوء",
   "home.adv.8.desc": "إطار هادئ بعيداً عن صخب المدينة.",
+  "video.subtitle": "اكتشفوا بالفيديو",
+  "video.title": "الإقامة و",
+  "video.titleAccent": "P.B.A",
+  "video.desc": "عرض شامل لإقامة أزيمور وشركة بن شلال أ. حليم — المشروع والمساحات ورؤية المطور.",
+  "video.play": "تشغيل الفيديو",
+
   "home.gallery.title": "المشروع بالصور",
   "home.gallery.subtitle": "محاكاات ثلاثية الأبعاد رسمية",
   "home.overview.subtitle": "نظرة عامة",

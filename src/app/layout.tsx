@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   description:
     "Promotion Immobilière Benchallal A. Halim. Résidence de prestige à 400 m de la mer à Béjaïa : confort, sécurité, qualité de vie.",
   authors: [{ name: "P.B.A — Benchallal A. Halim" }],
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "32x32" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
     title: "P.B.A — Résidence de prestige à Béjaïa",
     description:

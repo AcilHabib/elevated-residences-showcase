@@ -4,24 +4,26 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { SimulationImage } from "@/lib/simulations";
 
 type SimulationsGalleryProps = {
   images: SimulationImage[];
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   columns?: 2 | 3 | 4;
   className?: string;
 };
 
 export function SimulationsGallery({
   images,
-  title = "Galerie du projet",
-  subtitle = "Simulations 3D officielles",
+  title,
+  subtitle,
   columns = 3,
   className,
 }: SimulationsGalleryProps) {
+  const { t } = useI18n();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const gridCols =
@@ -80,12 +82,12 @@ export function SimulationsGallery({
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-sm p-4"
           role="dialog"
           aria-modal="true"
-          aria-label="Galerie photo"
+          aria-label={t("gallery.aria")}
         >
           <button
             type="button"
             onClick={closeLightbox}
-            aria-label="Fermer"
+            aria-label={t("gallery.close")}
             className="absolute top-6 right-6 glass rounded-full p-2.5 z-10"
           >
             <X className="h-5 w-5" />
@@ -93,7 +95,7 @@ export function SimulationsGallery({
           <button
             type="button"
             onClick={showPrev}
-            aria-label="Image précédente"
+            aria-label={t("gallery.prev")}
             className="absolute left-4 md:left-8 glass rounded-full p-3 z-10"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -101,7 +103,7 @@ export function SimulationsGallery({
           <button
             type="button"
             onClick={showNext}
-            aria-label="Image suivante"
+            aria-label={t("gallery.next")}
             className="absolute right-4 md:right-8 glass rounded-full p-3 z-10"
           >
             <ChevronRight className="h-6 w-6" />

@@ -17,6 +17,9 @@ dist-ssr
 .next
 next-env.d.ts
 *.local
+.env
+.env.*
+!.env.example
 
 # Wrangler / Cloudflare
 .wrangler/

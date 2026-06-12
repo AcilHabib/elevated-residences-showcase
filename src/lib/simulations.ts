@@ -1,84 +1,62 @@
+import { useMemo } from "react";
+
+import { useI18n } from "./i18n";
+
 export type SimulationImage = {
   src: string;
   alt: string;
   title?: string;
 };
 
-export const simulationImages: SimulationImage[] = [
-  {
-    src: "/images/simulations/01.jpg",
-    alt: "Vue nocturne de la résidence P.B.A à Béjaïa",
-    title: "Vue nocturne",
-  },
-  {
-    src: "/images/simulations/02.jpg",
-    alt: "Résidence illuminée sous un ciel étoilé",
-    title: "Ciel étoilé",
-  },
-  {
-    src: "/images/simulations/03.jpg",
-    alt: "Façade de la résidence en journée",
-    title: "Façade principale",
-  },
-  {
-    src: "/images/simulations/04.jpg",
-    alt: "Vue aérienne du complexe résidentiel",
-    title: "Vue aérienne",
-  },
-  {
-    src: "/images/simulations/05.jpg",
-    alt: "Résidence avec commerces de proximité",
-    title: "Commerces intégrés",
-  },
-  {
-    src: "/images/simulations/06.jpg",
-    alt: "Entrée paysagée de la résidence",
-    title: "Entrée paysagère",
-  },
-  {
-    src: "/images/simulations/07.jpg",
-    alt: "Architecture contemporaine de la résidence",
-    title: "Architecture",
-  },
-  {
-    src: "/images/simulations/08.jpg",
-    alt: "Vue d'ensemble avec piscines et espaces verts",
-    title: "Espaces communs",
-  },
-  {
-    src: "/images/simulations/09.jpg",
-    alt: "Complexe résidentiel au crépuscule",
-    title: "Crépuscule",
-  },
-  {
-    src: "/images/simulations/10.jpg",
-    alt: "Portail et entrée sécurisée de la résidence",
-    title: "Entrée sécurisée",
-  },
-  {
-    src: "/images/simulations/11.jpg",
-    alt: "Piscines et terrasses face à la mer",
-    title: "Piscines & mer",
-  },
-  {
-    src: "/images/simulations/12.jpg",
-    alt: "Aménagements extérieurs et aires de jeux",
-    title: "Aménagements",
-  },
-  {
-    src: "/images/simulations/13.jpg",
-    alt: "Vue panoramique du quartier résidentiel",
-    title: "Panorama",
-  },
-  {
-    src: "/images/simulations/14.jpg",
-    alt: "Perspective de rue de la résidence",
-    title: "Perspective urbaine",
-  },
+const simulationSources = [
+  "/images/simulations/01.jpg",
+  "/images/simulations/02.jpg",
+  "/images/simulations/03.jpg",
+  "/images/simulations/04.jpg",
+  "/images/simulations/05.jpg",
+  "/images/simulations/06.jpg",
+  "/images/simulations/07.jpg",
+  "/images/simulations/08.jpg",
+  "/images/simulations/09.jpg",
+  "/images/simulations/10.jpg",
+  "/images/simulations/11.jpg",
+  "/images/simulations/12.jpg",
+  "/images/simulations/13.jpg",
+  "/images/simulations/14.jpg",
 ];
 
-/** Curated subsets for inner pages */
+export function useSimulationImages(indices?: number[]): SimulationImage[] {
+  const { t } = useI18n();
+
+  return useMemo(() => {
+    const list = indices ?? simulationSources.map((_, i) => i);
+    return list.map((i) => ({
+      src: simulationSources[i],
+      alt: t(`sim.${i}.alt`),
+      title: t(`sim.${i}.title`),
+    }));
+  }, [t, indices]);
+}
+
+/** @deprecated Use useSimulationImages() for translated labels */
+export const simulationImages: SimulationImage[] = simulationSources.map((src, i) => ({
+  src,
+  alt: `sim.${i}.alt`,
+  title: `sim.${i}.title`,
+}));
+
+export function useResidenceGallery(): SimulationImage[] {
+  return useSimulationImages([0, 2, 3, 6, 7, 8, 12]);
+}
+
+export function useLocationGallery(): SimulationImage[] {
+  return useSimulationImages([3, 4, 8, 11, 13]);
+}
+
+/** @deprecated Use useResidenceGallery() */
 export const residenceGallery = simulationImages.filter((_, i) =>
   [0, 2, 3, 6, 7, 8, 12].includes(i),
 );
+
+/** @deprecated Use useLocationGallery() */
 export const locationGallery = simulationImages.filter((_, i) => [3, 4, 8, 11, 13].includes(i));

@@ -1,22 +1,74 @@
 "use client";
+
 import { useState } from "react";
 import { Phone, Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/lib/i18n";
+import {
+  buildWhatsAppUrl,
+  MAPS_EMBED_URL,
+  MAPS_LINK_URL,
+  RESIDENCE_COORDS,
+  WHATSAPP_NUMBER,
+} from "@/lib/site";
 
 const phones = ["0770 27 57 55", "0770 03 18 69", "0770 27 57 11"];
 
 export default function ContactPage() {
+  const { t, locale } = useI18n();
   const [sending, setSending] = useState(false);
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
     setSending(true);
+
+    const header =
+      locale === "en"
+        ? "*Quote request — P.B.A / Azimour Residence*"
+        : locale === "ar"
+          ? "*طلب عرض سعر — P.B.A / إقامة أزيمور*"
+          : "*Demande de devis — P.B.A / Résidence Azimour*";
+
+    const lines = [
+      header,
+      "",
+      locale === "en" ? `Name: ${name}` : locale === "ar" ? `الاسم: ${name}` : `Nom: ${name}`,
+      locale === "en"
+        ? `Phone: ${phone}`
+        : locale === "ar"
+          ? `الهاتف: ${phone}`
+          : `Téléphone: ${phone}`,
+      `Email: ${email}`,
+      subject
+        ? locale === "en"
+          ? `Subject: ${subject}`
+          : locale === "ar"
+            ? `الموضوع: ${subject}`
+            : `Sujet: ${subject}`
+        : "",
+      "",
+      locale === "en" ? "Details:" : locale === "ar" ? "التفاصيل:" : "Message:",
+      message,
+    ].filter(Boolean);
+
+    const url = buildWhatsAppUrl(lines.join("\n"));
+    window.open(url, "_blank", "noopener,noreferrer");
+
     setTimeout(() => {
       setSending(false);
-      toast.success("Message envoyé. Nous vous recontactons très rapidement.");
-      (e.target as HTMLFormElement).reset();
-    }, 900);
+      toast.success(t("contact.toast"));
+      form.reset();
+    }, 400);
   }
 
   return (
@@ -25,14 +77,14 @@ export default function ContactPage() {
         <div className="container-luxury">
           <Reveal>
             <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
-              Contact
+              {t("contact.subtitle")}
             </p>
             <h1 className="mt-4 font-display text-5xl md:text-7xl leading-tight max-w-4xl">
-              Parlons de votre <span className="italic text-gradient-gold">projet</span>
+              {t("contact.title")}{" "}
+              <span className="italic text-gradient-gold">{t("contact.titleAccent")}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Notre équipe commerciale vous répond avec attention. Téléphone, WhatsApp, email ou
-              formulaire — choisissez votre canal.
+              {t("contact.intro")}
             </p>
           </Reveal>
         </div>
@@ -40,7 +92,6 @@ export default function ContactPage() {
 
       <section className="pb-32">
         <div className="container-luxury grid lg:grid-cols-5 gap-8">
-          {/* Contact cards */}
           <div className="lg:col-span-2 space-y-4">
             <Reveal>
               <div className="rounded-3xl p-7 bg-card border border-border">
@@ -48,7 +99,7 @@ export default function ContactPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/10 text-gold">
                     <Phone className="h-5 w-5" />
                   </div>
-                  <h3 className="font-display text-xl">Service commercial</h3>
+                  <h3 className="font-display text-xl">{t("contact.sales")}</h3>
                 </div>
                 <ul className="space-y-2">
                   {phones.map((p) => (
@@ -67,7 +118,7 @@ export default function ContactPage() {
 
             <Reveal delay={0.08}>
               <a
-                href="https://wa.me/213770275755"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener"
                 className="flex items-center gap-4 p-6 rounded-3xl bg-gradient-to-br from-[oklch(0.7_0.18_150)] to-[oklch(0.55_0.16_150)] text-white hover:scale-[1.01] transition-transform"
@@ -75,7 +126,7 @@ export default function ContactPage() {
                 <MessageCircle className="h-7 w-7" />
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] opacity-80">WhatsApp</p>
-                  <p className="font-display text-xl">Discuter maintenant</p>
+                  <p className="font-display text-xl">{t("contact.whatsapp")}</p>
                 </div>
               </a>
             </Reveal>
@@ -89,7 +140,9 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Email</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {t("contact.email")}
+                  </p>
                   <p className="font-display text-lg break-all">promotion.benchallal@gmail.com</p>
                 </div>
               </a>
@@ -102,36 +155,35 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    Adresse
+                    {t("contact.address")}
                   </p>
-                  <p className="font-display text-lg">Béjaïa · Algérie</p>
+                  <p className="font-display text-lg">{t("contact.addressValue")}</p>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Form */}
           <div className="lg:col-span-3">
             <Reveal delay={0.1}>
               <form
                 onSubmit={onSubmit}
                 className="rounded-3xl p-8 md:p-10 bg-card border border-border"
               >
-                <h3 className="font-display text-3xl">Envoyez-nous un message</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Nous vous répondons sous 24h.</p>
+                <h3 className="font-display text-3xl">{t("contact.formTitle")}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t("contact.formSubtitle")}</p>
 
                 <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                  <Field label="Nom complet" name="name" required />
-                  <Field label="Téléphone" name="phone" type="tel" required />
+                  <Field label={t("contact.name")} name="name" required />
+                  <Field label={t("contact.phone")} name="phone" type="tel" required />
                   <div className="sm:col-span-2">
-                    <Field label="Email" name="email" type="email" required />
+                    <Field label={t("contact.emailField")} name="email" type="email" required />
                   </div>
                   <div className="sm:col-span-2">
-                    <Field label="Sujet" name="subject" />
+                    <Field label={t("contact.subject")} name="subject" />
                   </div>
                   <div className="sm:col-span-2">
                     <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
-                      Message
+                      {t("contact.message")}
                     </label>
                     <textarea
                       name="message"
@@ -145,9 +197,9 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[var(--gold)] to-[oklch(from_var(--gold)_calc(l+0.08)_c_h)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.03] transition-transform disabled:opacity-60"
+                  className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-luxury)] hover:scale-[1.03] transition-transform disabled:opacity-60"
                 >
-                  {sending ? "Envoi…" : "Envoyer le message"}
+                  {sending ? t("contact.sending") : t("contact.submit")}
                   <Send className="h-4 w-4" />
                 </button>
               </form>
@@ -156,19 +208,32 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map */}
       <section className="pb-32">
         <div className="container-luxury">
           <Reveal>
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <h2 className="font-display text-2xl">{t("contact.mapTitle")}</h2>
+              <a
+                href={MAPS_LINK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold uppercase tracking-[0.15em] text-primary hover:text-gold transition-colors"
+              >
+                {t("location.openMaps")} →
+              </a>
+            </div>
             <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-luxury)] aspect-[21/9]">
               <iframe
-                title="Carte"
-                src="https://www.google.com/maps?q=Bejaia,Algeria&output=embed"
+                title={t("contact.mapTitle")}
+                src={MAPS_EMBED_URL}
                 className="h-full w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {t("location.coords")}: {RESIDENCE_COORDS.label}
+            </p>
           </Reveal>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { SimulationImage } from "@/lib/simulations";
 
@@ -14,6 +15,7 @@ type HeroCarouselProps = {
 };
 
 export function HeroCarousel({ images, className, autoplayMs = 5500 }: HeroCarouselProps) {
+  const { t } = useI18n();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 35 });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -59,7 +61,7 @@ export function HeroCarousel({ images, className, autoplayMs = 5500 }: HeroCarou
       <button
         type="button"
         onClick={scrollPrev}
-        aria-label="Image précédente"
+        aria-label={t("gallery.prev")}
         className="absolute left-4 top-1/2 z-20 -translate-y-1/2 glass rounded-full p-2.5 text-foreground/90 hover:text-primary transition-colors hidden md:flex"
       >
         <ChevronLeft className="h-5 w-5" />
@@ -67,7 +69,7 @@ export function HeroCarousel({ images, className, autoplayMs = 5500 }: HeroCarou
       <button
         type="button"
         onClick={scrollNext}
-        aria-label="Image suivante"
+        aria-label={t("gallery.next")}
         className="absolute right-4 top-1/2 z-20 -translate-y-1/2 glass rounded-full p-2.5 text-foreground/90 hover:text-primary transition-colors hidden md:flex"
       >
         <ChevronRight className="h-5 w-5" />
@@ -78,7 +80,7 @@ export function HeroCarousel({ images, className, autoplayMs = 5500 }: HeroCarou
           <button
             key={image.src}
             type="button"
-            aria-label={`Afficher ${image.title ?? image.alt}`}
+            aria-label={`${t("gallery.show")} ${image.title ?? image.alt}`}
             onClick={() => scrollTo(index)}
             className={cn(
               "h-1.5 rounded-full transition-all duration-300",

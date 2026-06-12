@@ -1,47 +1,52 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
+import { useI18n } from "@/lib/i18n";
+import { RESIDENCE_NAME } from "@/lib/site";
 
 export function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="relative mt-32 border-t border-border bg-surface/50">
       <div className="container-luxury py-20 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo className="h-16 md:h-20 min-w-[220px] md:min-w-[260px] mb-6" />
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-            Promoteur immobilier de prestige à Béjaïa. Bâtir un cadre de vie d&apos;exception, à 400
-            mètres de la mer.
+            {t("footer.tagline")}
           </p>
         </div>
 
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] text-gold mb-4 font-semibold">
-            Navigation
+            {t("footer.navigation")}
           </h4>
           <ul className="space-y-2.5 text-sm text-muted-foreground">
             <li>
               <Link href="/residence" className="hover:text-foreground transition-colors">
-                La Résidence
+                {t("footer.link.residence")}
               </Link>
             </li>
             <li>
               <Link href="/plans" className="hover:text-foreground transition-colors">
-                Plans d&apos;étage
+                {t("footer.link.plans")}
               </Link>
             </li>
             <li>
               <Link href="/commercial" className="hover:text-foreground transition-colors">
-                Locaux commerciaux
+                {t("footer.link.commercial")}
               </Link>
             </li>
             <li>
               <Link href="/location" className="hover:text-foreground transition-colors">
-                Localisation
+                {t("footer.link.location")}
               </Link>
             </li>
             <li>
               <Link href="/faq" className="hover:text-foreground transition-colors">
-                FAQ
+                {t("nav.faq")}
               </Link>
             </li>
           </ul>
@@ -49,7 +54,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] text-gold mb-4 font-semibold">
-            Contact
+            {t("footer.contact")}
           </h4>
           <ul className="space-y-2.5 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
@@ -75,12 +80,13 @@ export function Footer() {
 
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] text-gold mb-4 font-semibold">
-            Adresse
+            {t("footer.address")}
           </h4>
           <p className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2">
             <MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" />
+            {RESIDENCE_NAME}
+            <br />
             Béjaïa, Algérie
-            <br />À 400 m de la mer
           </p>
         </div>
       </div>
@@ -88,10 +94,9 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-luxury py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Promotion Immobilière Benchallal A. Halim — P.B.A. Tous
-            droits réservés.
+            © {new Date().getFullYear()} {t("footer.copyright")}
           </p>
-          <p className="uppercase tracking-[0.18em]">Résidence de prestige · Béjaïa</p>
+          <p className="uppercase tracking-[0.18em]">{t("footer.residence_line")}</p>
         </div>
       </div>
     </footer>

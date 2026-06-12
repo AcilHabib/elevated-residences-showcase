@@ -1,6 +1,8 @@
 "use client";
+
 import { Store, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { useI18n } from "@/lib/i18n";
 
 const categories = [
   { type: "F2", spaces: [49.75, 56.23, 67.89, 68.02] },
@@ -9,6 +11,8 @@ const categories = [
 ];
 
 export default function CommercialPage() {
+  const { t } = useI18n();
+
   return (
     <>
       <section className="relative pt-40 pb-20 overflow-hidden">
@@ -23,14 +27,14 @@ export default function CommercialPage() {
         <div className="container-luxury relative">
           <Reveal>
             <p className="hairline-gold text-xs uppercase tracking-[0.25em] text-gold font-semibold">
-              Locaux commerciaux
+              {t("commercial.subtitle")}
             </p>
             <h1 className="mt-4 font-display text-5xl md:text-7xl leading-tight max-w-4xl">
-              Investissements <span className="italic text-gradient-gold">stratégiques</span>
+              {t("commercial.title")}{" "}
+              <span className="italic text-gradient-gold">{t("commercial.titleAccent")}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              Des opportunités d'investissement stratégiques au sein de la résidence — emplacements
-              à fort potentiel et flux assuré.
+              {t("commercial.intro")}
             </p>
           </Reveal>
         </div>
@@ -46,7 +50,7 @@ export default function CommercialPage() {
                     {cat.type}
                   </h2>
                   <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-                    {cat.spaces.length} surfaces disponibles
+                    {cat.spaces.length} {t("common.spacesAvailable")}
                   </p>
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -60,13 +64,13 @@ export default function CommercialPage() {
                           <span className="text-gold font-medium">m²</span>
                         </div>
                         <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                          Local {cat.type}
+                          {t("common.unit")} {cat.type}
                         </p>
                         <a
                           href="/contact"
                           className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-gold group-hover:gap-3 transition-all"
                         >
-                          Se renseigner <ArrowRight className="h-3.5 w-3.5" />
+                          {t("common.inquire")} <ArrowRight className="h-3.5 w-3.5" />
                         </a>
                       </div>
                     </Reveal>

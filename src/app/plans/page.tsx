@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import PlansPage from "@/views/plans-page";
 
 export const metadata: Metadata = {
-  title: "Plans d'étage",
-  description: "Plans PDF de chaque étage pour les blocs A à F de la résidence P.B.A.",
+  title: "Plans d'appartement",
+  description: "Plans PDF par type d'appartement F2, F3 et F4 — Résidence Azimour P.B.A.",
 };
 
 export default function Page() {

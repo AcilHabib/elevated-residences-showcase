@@ -41,9 +41,9 @@ export function Header() {
         scrolled ? "glass-strong shadow-[var(--shadow-soft)]" : "bg-transparent",
       )}
     >
-      <div className="container-luxury flex h-24 md:h-28 items-center justify-between gap-4">
-        <Link href="/" className="flex shrink-0 items-center">
-          <Logo />
+      <div className="container-luxury flex h-28 md:h-32 items-center justify-between gap-4">
+        <Link href="/" className="flex shrink-0 items-center py-1">
+          <Logo className="h-[3.25rem] min-w-[220px] sm:h-[3.75rem] sm:min-w-[260px] md:h-[4.75rem] md:min-w-[300px] lg:h-[5.25rem] lg:min-w-[340px]" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

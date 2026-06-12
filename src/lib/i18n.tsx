@@ -1,49 +1,10 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from "react";
+
+import { translations } from "./translations";
 
 export type Locale = "fr" | "ar" | "en";
-
-type Dict = Record<string, string>;
-
-const translations: Record<Locale, Dict> = {
-  fr: {
-    "nav.home": "Accueil",
-    "nav.residence": "La Résidence",
-    "nav.plans": "Plans",
-    "nav.commercial": "Locaux",
-    "nav.location": "Localisation",
-    "nav.faq": "FAQ",
-    "nav.contact": "Contact",
-    "cta.brochure": "Télécharger la brochure",
-    "cta.discover": "Découvrir le projet",
-    "cta.rdv": "Demander un RDV",
-  },
-  ar: {
-    "nav.home": "الرئيسية",
-    "nav.residence": "الإقامة",
-    "nav.plans": "المخططات",
-    "nav.commercial": "المحلات",
-    "nav.location": "الموقع",
-    "nav.faq": "الأسئلة",
-    "nav.contact": "اتصال",
-    "cta.brochure": "تحميل الكتيب",
-    "cta.discover": "اكتشف المشروع",
-    "cta.rdv": "حجز موعد",
-  },
-  en: {
-    "nav.home": "Home",
-    "nav.residence": "The Residence",
-    "nav.plans": "Floor Plans",
-    "nav.commercial": "Commercial",
-    "nav.location": "Location",
-    "nav.faq": "FAQ",
-    "nav.contact": "Contact",
-    "cta.brochure": "Download brochure",
-    "cta.discover": "Discover the project",
-    "cta.rdv": "Book a meeting",
-  },
-};
 
 type Ctx = {
   locale: Locale;
@@ -73,7 +34,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     if (typeof window !== "undefined") localStorage.setItem("pba-locale", l);
   };
 
-  const t = (key: string) => translations[locale][key] ?? translations.fr[key] ?? key;
+  const t = useCallback(
+    (key: string) => translations[locale][key] ?? translations.fr[key] ?? key,
+    [locale],
+  );
 
   return <I18nContext.Provider value={{ locale, setLocale, t }}>{children}</I18nContext.Provider>;
 }

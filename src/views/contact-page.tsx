@@ -11,10 +11,11 @@ import {
   MAPS_EMBED_URL,
   MAPS_LINK_URL,
   RESIDENCE_COORDS,
+  WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "@/lib/site";
 
-const phones = ["0770 27 57 55", "0770 03 18 69", "0770 27 57 11"];
+const phones = ["0770 03 18 69", "0770 27 57 55", "0770 27 57 11"];
 
 export default function ContactPage() {
   const { t, locale } = useI18n();
@@ -127,6 +128,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] opacity-80">WhatsApp</p>
                   <p className="font-display text-xl">{t("contact.whatsapp")}</p>
+                  <p className="text-sm opacity-90 mt-0.5">{WHATSAPP_DISPLAY}</p>
                 </div>
               </a>
             </Reveal>

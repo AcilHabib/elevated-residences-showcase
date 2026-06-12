@@ -11,7 +11,9 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${RESIDENCE_COORDS.
 
 export const MAPS_LINK_URL = `https://www.google.com/maps/place/${RESIDENCE_COORDS.lat},${RESIDENCE_COORDS.lng}`;
 
+/** WhatsApp for quote requests & client contact — +213 770 03 18 69 */
 export const WHATSAPP_NUMBER = "213770031869";
+export const WHATSAPP_DISPLAY = "0770 03 18 69";
 
 export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

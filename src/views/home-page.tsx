@@ -11,6 +11,8 @@ import {
   Building2,
   Sparkles,
   Trees,
+  Warehouse,
+  Baby,
   ArrowRight,
   Thermometer,
   Square,
@@ -29,8 +31,9 @@ import { SimulationsGallery } from "@/components/SimulationsGallery";
 import { Counter } from "@/components/Counter";
 import { useI18n } from "@/lib/i18n";
 import { useSimulationImages } from "@/lib/simulations";
+import { buildWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/site";
 
-const advantageIcons = [Waves, Shield, Camera, Waves, Car, Trees, Sparkles];
+const advantageIcons = [Waves, Shield, Camera, Waves, Car, Warehouse, Baby, Trees, Sparkles];
 const featureIcons = [Thermometer, Square, Volume2, ChefHat, Gem, Layers];
 const blockIds = ["A", "B", "C", "D", "E", "F"];
 
@@ -307,10 +310,12 @@ export default function HomePage() {
                     {t("home.cta.button")} <ArrowRight className="h-4 w-4" />
                   </Link>
                   <a
-                    href="tel:+213770275755"
+                    href={buildWhatsAppUrl(t("home.cta.whatsappMessage"))}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full glass-strong px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground"
                   >
-                    0770 27 57 55
+                    WhatsApp {WHATSAPP_DISPLAY}
                   </a>
                 </div>
               </div>

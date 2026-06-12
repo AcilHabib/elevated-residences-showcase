@@ -67,7 +67,8 @@ const base: Record<Locale, Dict> = {
     "contact.address": "Adresse",
     "contact.addressValue": "Résidence Azimour · Béjaïa, Algérie",
     "contact.formTitle": "Demande de devis",
-    "contact.formSubtitle": "Remplissez le formulaire — votre demande sera envoyée sur WhatsApp.",
+    "contact.formSubtitle":
+      "Remplissez le formulaire — votre demande de devis sera envoyée sur WhatsApp au 0770 03 18 69.",
     "contact.name": "Nom complet",
     "contact.phone": "Téléphone",
     "contact.emailField": "Email",
@@ -142,7 +143,8 @@ const base: Record<Locale, Dict> = {
     "contact.address": "Address",
     "contact.addressValue": "Azimour Residence · Béjaïa, Algeria",
     "contact.formTitle": "Quote request",
-    "contact.formSubtitle": "Fill in the form — your request will be sent via WhatsApp.",
+    "contact.formSubtitle":
+      "Fill in the form — your quote request will be sent via WhatsApp to 0770 03 18 69.",
     "contact.name": "Full name",
     "contact.phone": "Phone",
     "contact.emailField": "Email",
@@ -215,7 +217,7 @@ const base: Record<Locale, Dict> = {
     "contact.address": "العنوان",
     "contact.addressValue": "إقامة أزيمور · بجاية، الجزائر",
     "contact.formTitle": "طلب عرض سعر",
-    "contact.formSubtitle": "املأ النموذج — سيُرسل طلبكم عبر واتساب.",
+    "contact.formSubtitle": "املأ النموذج — سيُرسل طلب عرض السعر عبر واتساب إلى 0770 03 18 69.",
     "contact.name": "الاسم الكامل",
     "contact.phone": "الهاتف",
     "contact.emailField": "البريد الإلكتروني",

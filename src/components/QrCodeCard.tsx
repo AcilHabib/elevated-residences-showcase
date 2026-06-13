@@ -4,7 +4,7 @@ import { QrCode } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/lib/i18n";
-import { COMPANY_QR_SRC } from "@/lib/site";
+import { COMPANY_QR_SRC, COMPANY_QR_URL } from "@/lib/site";
 
 type QrCodeCardProps = {
   compact?: boolean;
@@ -24,7 +24,13 @@ export function QrCodeCard({ compact, className }: QrCodeCardProps) {
           <h3 className="font-display text-xl">{t("qr.title")}</h3>
         </div>
         <p className="text-sm text-muted-foreground mb-5">{t("qr.desc")}</p>
-        <div className="mx-auto w-fit rounded-2xl border border-border bg-white p-3 shadow-sm">
+        <a
+          href={COMPANY_QR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-auto block w-fit rounded-2xl border border-border bg-white p-3 shadow-sm transition-transform hover:scale-[1.02]"
+          title={t("qr.linkTitle")}
+        >
           <img
             src={COMPANY_QR_SRC}
             alt={t("qr.alt")}
@@ -33,7 +39,7 @@ export function QrCodeCard({ compact, className }: QrCodeCardProps) {
             }
             loading="lazy"
           />
-        </div>
+        </a>
       </div>
     </Reveal>
   );

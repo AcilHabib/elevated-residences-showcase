@@ -209,8 +209,9 @@ const fr: Dict = {
     "Projet actuel — résidence de prestige à 400 m de la mer, en cours de construction.",
 
   "qr.title": "QR code officiel",
-  "qr.desc": "Scannez le QR code Promotion Benchallal A. Halim pour accéder à nos informations.",
-  "qr.alt": "QR code officiel Promotion Benchallal A. Halim",
+  "qr.desc": "Scannez pour ouvrir la localisation Google Maps du projet à Bni Ksila.",
+  "qr.alt": "QR code officiel — localisation Résidence Azimour",
+  "qr.linkTitle": "Ouvrir la localisation sur Google Maps",
 };
 
 const en: Dict = {
@@ -414,8 +415,9 @@ const en: Dict = {
     "Current project — prestige residence 400 m from the sea, under construction.",
 
   "qr.title": "Official QR code",
-  "qr.desc": "Scan the official Promotion Benchallal A. Halim QR code for company information.",
-  "qr.alt": "Official Promotion Benchallal A. Halim QR code",
+  "qr.desc": "Scan to open the Google Maps location of the project in Bni Ksila.",
+  "qr.alt": "Official QR code — Azimour Residence location",
+  "qr.linkTitle": "Open location in Google Maps",
 };
 
 const ar: Dict = {
@@ -613,8 +615,9 @@ const ar: Dict = {
     "المشروع الحالي — إقامة راقية على بعد 400 م من البحر، قيد الإنشاء.",
 
   "qr.title": "رمز QR الرسمي",
-  "qr.desc": "امسح رمز QR الرسمي لشركة بن شلال أ. حليم للاطلاع على معلوماتنا.",
-  "qr.alt": "رمز QR الرسمي لشركة Promotion Benchallal A. Halim",
+  "qr.desc": "امسح الرمز لفتح موقع المشروع على خرائط Google في بني كسيلة.",
+  "qr.alt": "رمز QR الرسمي — موقع إقامة أزيمور",
+  "qr.linkTitle": "فتح الموقع في خرائط Google",
 };
 
 export const pageTranslations: Record<Locale, Dict> = { fr, en, ar };

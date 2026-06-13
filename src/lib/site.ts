@@ -1,8 +1,8 @@
-/** Résidence Azimour — chantier à Bni Ksila, wilaya de Béjaïa */
+/** Résidence Azimour — chantier à Bni Ksila (coords from official company QR code) */
 export const RESIDENCE_COORDS = {
-  lat: 36.8825,
-  lng: 4.66194,
-  label: "36°52'57\"N · 4°39'43\"E",
+  lat: 36.878571,
+  lng: 4.666678,
+  label: "36°52'43\"N · 4°40'00\"E",
   place: "Bni Ksila, Béjaïa",
 } as const;
 
@@ -25,6 +25,8 @@ export const MAPS_EMBED_URL = `https://www.google.com/maps?q=${RESIDENCE_COORDS.
 export const MAPS_LINK_URL = `https://www.google.com/maps?q=${RESIDENCE_COORDS.lat},${RESIDENCE_COORDS.lng}`;
 
 export const COMPANY_QR_SRC = "/images/company-qr.png";
+/** Destination encoded in the official printed QR code */
+export const COMPANY_QR_URL = MAPS_LINK_URL;
 
 export const COMPANY_EMAIL = "promotion.benchallal@gmail.com";
 export const COMPANY_LEGAL_NAME = "Promotion Benchallal A. Halim";
@@ -80,5 +82,5 @@ export function buildWhatsAppUrl(message: string) {
 }
 
 export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://pba-bejaia.com";
+  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://benchallal-immo.com";
 }

@@ -4,7 +4,13 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { useI18n } from "@/lib/i18n";
-import { OFFICE_COORDS, OFFICE_MAPS_LINK, RESIDENCE_NAME } from "@/lib/site";
+import {
+  OFFICE_COORDS,
+  OFFICE_MAPS_LINK,
+  COMPANY_QR_SRC,
+  COMPANY_QR_URL,
+  RESIDENCE_NAME,
+} from "@/lib/site";
 
 export function Footer() {
   const { t } = useI18n();
@@ -99,12 +105,20 @@ export function Footer() {
               </a>
             </span>
           </p>
-          <img
-            src="/images/company-qr.png"
-            alt={t("qr.alt")}
-            className="h-24 w-24 rounded-lg border border-border bg-white p-1.5"
-            loading="lazy"
-          />
+          <a
+            href={COMPANY_QR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block"
+            title={t("qr.linkTitle")}
+          >
+            <img
+              src={COMPANY_QR_SRC}
+              alt={t("qr.alt")}
+              className="h-24 w-24 rounded-lg border border-border bg-white p-1.5"
+              loading="lazy"
+            />
+          </a>
         </div>
       </div>
 

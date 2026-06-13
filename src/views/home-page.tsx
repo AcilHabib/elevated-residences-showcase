@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import interiorImg from "@/assets/interior-luxury.jpg";
 import { AboutSection } from "@/components/AboutSection";
+import { CompanyPortfolioSection } from "@/components/CompanyPortfolioSection";
 import { PromoVideoSection } from "@/components/PromoVideoSection";
 import { AwardsSection } from "@/components/AwardsSection";
 import { HeroCarousel } from "@/components/HeroCarousel";
@@ -184,6 +185,7 @@ export default function HomePage() {
       </section>
 
       <AboutSection />
+      <CompanyPortfolioSection />
       <PromoVideoSection />
       <AwardsSection />
 

@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import ContactPage from "@/views/contact-page";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact — Benchallal Immo P.B.A",
   description:
-    "Contactez la promotion immobilière Benchallal A. Halim. Téléphone, WhatsApp, email.",
+    "Contactez Promotion Benchallal A. Halim (Benchallal Immo). Bureau Edimco Béjaïa, WhatsApp 0770 03 18 69.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function Page() {

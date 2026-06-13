@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import HomePage from "@/views/home-page";
 
 export const metadata: Metadata = {
-  title: "P.B.A — Résidence de prestige à Béjaïa",
+  title: "Benchallal Immo — Résidence Azimour Bni Ksila",
   description:
-    "Résidence sécurisée à 400 m de la mer à Béjaïa. Confort, qualité de vie et finitions premium.",
+    "Promotion Benchallal A. Halim (Benchallal Immo / P.B.A) — Résidence Azimour à Bni Ksila, 400 m de la mer. Promoteur immobilier à Béjaïa depuis 2014.",
+  alternates: { canonical: "/" },
 };
 
 export default function Page() {

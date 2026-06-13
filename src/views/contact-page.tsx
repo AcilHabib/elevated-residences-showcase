@@ -4,13 +4,14 @@ import { useState } from "react";
 import { Phone, Mail, MessageCircle, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
 
+import { QrCodeCard } from "@/components/QrCodeCard";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/lib/i18n";
 import {
   buildWhatsAppUrl,
-  MAPS_EMBED_URL,
-  MAPS_LINK_URL,
-  RESIDENCE_COORDS,
+  OFFICE_COORDS,
+  OFFICE_MAPS_EMBED_URL,
+  OFFICE_MAPS_LINK,
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "@/lib/site";
@@ -163,6 +164,8 @@ export default function ContactPage() {
                 </div>
               </div>
             </Reveal>
+
+            <QrCodeCard compact className="mt-4" />
           </div>
 
           <div className="lg:col-span-3">
@@ -216,7 +219,7 @@ export default function ContactPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
               <h2 className="font-display text-2xl">{t("contact.mapTitle")}</h2>
               <a
-                href={MAPS_LINK_URL}
+                href={OFFICE_MAPS_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-semibold uppercase tracking-[0.15em] text-primary hover:text-gold transition-colors"
@@ -227,14 +230,14 @@ export default function ContactPage() {
             <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-luxury)] aspect-[21/9]">
               <iframe
                 title={t("contact.mapTitle")}
-                src={MAPS_EMBED_URL}
+                src={OFFICE_MAPS_EMBED_URL}
                 className="h-full w-full"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
             <p className="mt-3 text-sm text-muted-foreground">
-              {t("location.coords")}: {RESIDENCE_COORDS.label}
+              {t("location.coords")}: {OFFICE_COORDS.label} — {OFFICE_COORDS.place}
             </p>
           </Reveal>
         </div>

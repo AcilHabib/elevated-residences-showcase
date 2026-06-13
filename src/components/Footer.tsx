@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 import { useI18n } from "@/lib/i18n";
-import { RESIDENCE_NAME } from "@/lib/site";
+import { OFFICE_COORDS, OFFICE_MAPS_LINK, RESIDENCE_NAME } from "@/lib/site";
 
 export function Footer() {
   const { t } = useI18n();
@@ -17,6 +17,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
             {t("footer.tagline")}
           </p>
+          <p className="mt-3 text-xs uppercase tracking-[0.15em] text-gold/80">Benchallal Immo</p>
         </div>
 
         <div>
@@ -82,12 +83,28 @@ export function Footer() {
           <h4 className="text-xs uppercase tracking-[0.2em] text-gold mb-4 font-semibold">
             {t("footer.address")}
           </h4>
-          <p className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2">
+          <p className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2 mb-4">
             <MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" />
-            {RESIDENCE_NAME}
-            <br />
-            Béjaïa, Algérie
+            <span>
+              <strong className="text-foreground/90 block mb-1">{RESIDENCE_NAME}</strong>
+              Bni Ksila, Béjaïa
+              <br />
+              <a
+                href={OFFICE_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                Bureau {OFFICE_COORDS.place}
+              </a>
+            </span>
           </p>
+          <img
+            src="/images/company-qr.png"
+            alt={t("qr.alt")}
+            className="h-24 w-24 rounded-lg border border-border bg-white p-1.5"
+            loading="lazy"
+          />
         </div>
       </div>
 

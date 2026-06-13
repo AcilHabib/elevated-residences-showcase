@@ -128,11 +128,16 @@ const fr: Dict = {
     "Des opportunités d'investissement stratégiques au sein de la résidence — emplacements à fort potentiel et flux assuré.",
 
   "location.subtitle": "Localisation",
-  "location.title": "Béjaïa, à",
+  "location.title": "Bni Ksila, à",
   "location.titleAccent": "400 mètres",
   "location.titleEnd": "de la mer",
   "location.intro":
-    "Une adresse rare, au croisement de la nature, de la culture et des commodités urbaines.",
+    "La Résidence Azimour est en cours de réalisation à Bni Ksila, wilaya de Béjaïa. Promotion Benchallal A. Halim (Benchallal Immo) vous accueille également à son bureau Edimco.",
+  "location.projectMapTitle": "Chantier — Résidence Azimour",
+  "location.projectMapDesc": "Localisation du projet en cours à Bni Ksila, commune de Béjaïa.",
+  "location.officeTitle": "Bureau commercial — Edimco Béjaïa",
+  "location.officeDesc":
+    "Promotion Benchallal Abdelhalim — siège et accueil clients à Edimco, Béjaïa.",
   "location.aerialAlt": "Vue aérienne du site",
   "location.coast": "À 400 m de la côte méditerranéenne",
   "location.nearbyTitle": "À proximité immédiate",
@@ -185,6 +190,27 @@ const fr: Dict = {
     "Attestation de participation — 8ème édition du Salon du Promoteur Immobilier à Béjaïa",
   "awards.alt.2": "L'équipe Promotion Benchallal A. Halim recevant la récompense",
   "awards.alt.3": "Stand P.B.A au Salon du Promoteur Immobilier à Béjaïa",
+
+  "portfolio.subtitle": "Nos réalisations",
+  "portfolio.title": "Trois sites",
+  "portfolio.titleAccent": "Benchallal Immo",
+  "portfolio.intro":
+    "Promotion Benchallal A. Halim développe des résidences de qualité à travers la wilaya de Béjaïa.",
+  "portfolio.apartments": "appartements",
+  "portfolio.status.done": "Livré",
+  "portfolio.status.progress": "En cours",
+  "portfolio.almas.name": "Résidence Almas",
+  "portfolio.almas.location": "Amizour, Béjaïa",
+  "portfolio.ighil.name": "Ighil El Bordj",
+  "portfolio.ighil.location": "Béjaïa",
+  "portfolio.azimour.name": "Résidence Azimour",
+  "portfolio.azimour.location": "Bni Ksila, Béjaïa",
+  "portfolio.azimour.highlight":
+    "Projet actuel — résidence de prestige à 400 m de la mer, en cours de construction.",
+
+  "qr.title": "QR code officiel",
+  "qr.desc": "Scannez le QR code Promotion Benchallal A. Halim pour accéder à nos informations.",
+  "qr.alt": "QR code officiel Promotion Benchallal A. Halim",
 };
 
 const en: Dict = {
@@ -312,10 +338,16 @@ const en: Dict = {
     "Strategic investment opportunities within the residence — high-potential locations with steady footfall.",
 
   "location.subtitle": "Location",
-  "location.title": "Béjaïa,",
+  "location.title": "Bni Ksila,",
   "location.titleAccent": "400 meters",
   "location.titleEnd": "from the sea",
-  "location.intro": "A rare address at the crossroads of nature, culture and urban amenities.",
+  "location.intro":
+    "Azimour Residence is under construction in Bni Ksila, Béjaïa Province. Benchallal Immo also welcomes you at its Edimco office in Béjaïa.",
+  "location.projectMapTitle": "Construction site — Azimour Residence",
+  "location.projectMapDesc": "Project location in Bni Ksila, Béjaïa Province.",
+  "location.officeTitle": "Sales office — Edimco Béjaïa",
+  "location.officeDesc":
+    "Promotion Benchallal Abdelhalim — head office and client reception in Edimco, Béjaïa.",
   "location.aerialAlt": "Aerial view of the site",
   "location.coast": "400 m from the Mediterranean coast",
   "location.nearbyTitle": "Nearby amenities",
@@ -363,6 +395,27 @@ const en: Dict = {
     "Certificate of participation — 8th edition of the Real Estate Developer Trade Fair in Béjaïa",
   "awards.alt.2": "Promotion Benchallal A. Halim team receiving the award",
   "awards.alt.3": "P.B.A stand at the Real Estate Developer Trade Fair in Béjaïa",
+
+  "portfolio.subtitle": "Our projects",
+  "portfolio.title": "Three sites",
+  "portfolio.titleAccent": "Benchallal Immo",
+  "portfolio.intro":
+    "Promotion Benchallal A. Halim delivers quality residential projects across Béjaïa Province.",
+  "portfolio.apartments": "apartments",
+  "portfolio.status.done": "Delivered",
+  "portfolio.status.progress": "Under construction",
+  "portfolio.almas.name": "Résidence Almas",
+  "portfolio.almas.location": "Amizour, Béjaïa",
+  "portfolio.ighil.name": "Ighil El Bordj",
+  "portfolio.ighil.location": "Béjaïa",
+  "portfolio.azimour.name": "Azimour Residence",
+  "portfolio.azimour.location": "Bni Ksila, Béjaïa",
+  "portfolio.azimour.highlight":
+    "Current project — prestige residence 400 m from the sea, under construction.",
+
+  "qr.title": "Official QR code",
+  "qr.desc": "Scan the official Promotion Benchallal A. Halim QR code for company information.",
+  "qr.alt": "Official Promotion Benchallal A. Halim QR code",
 };
 
 const ar: Dict = {
@@ -487,10 +540,16 @@ const ar: Dict = {
   "commercial.intro": "فرص استثمارية استراتيجية داخل الإقامة — مواقع عالية الإمكانات وحركة مضمونة.",
 
   "location.subtitle": "الموقع",
-  "location.title": "بجاية، على بعد",
+  "location.title": "بني كسيلة، على بعد",
   "location.titleAccent": "400 متراً",
   "location.titleEnd": "من البحر",
-  "location.intro": "عنوان نادر عند تقاطع الطبيعة والثقافة والخدمات الحضرية.",
+  "location.intro":
+    "إقامة أزيمور قيد الإنجاز في بني كسيلة، ولاية بجاية. تستقبلكم Benchallal Immo أيضاً في مكتبها بإيديمكو بجاية.",
+  "location.projectMapTitle": "ورشة الإنجاز — إقامة أزيمور",
+  "location.projectMapDesc": "موقع المشروع في بني كسيلة، ولاية بجاية.",
+  "location.officeTitle": "المكتب التجاري — إيديمكو بجاية",
+  "location.officeDesc":
+    "Promotion Benchallal Abdelhalim — المقر واستقبال الزبائن في إيديمكو، بجاية.",
   "location.aerialAlt": "منظر جوي للموقع",
   "location.coast": "على بعد 400 م من الساحل المتوسطي",
   "location.nearbyTitle": "في الجوار المباشر",
@@ -536,9 +595,26 @@ const ar: Dict = {
   "awards.alt.1": "شهادة مشاركة — الدورة الثامنة لصالون المطور العقاري ببجاية",
   "awards.alt.2": "فريق شركة بن شلال أ. حليم يتسلم الجائزة",
   "awards.alt.3": "جناح P.B.A في صالون المطور العقاري ببجاية",
-};
 
-// Remove duplicate key typo in ar
-delete ar["home.residence.intro"];
+  "portfolio.subtitle": "مشاريعنا",
+  "portfolio.title": "ثلاثة مواقع",
+  "portfolio.titleAccent": "Benchallal Immo",
+  "portfolio.intro": "شركة بن شلال أ. حليم للترويج العقاري تنفذ مشاريع سكنية نوعية في ولاية بجاية.",
+  "portfolio.apartments": "شقة",
+  "portfolio.status.done": "مُسلَّم",
+  "portfolio.status.progress": "قيد الإنجاز",
+  "portfolio.almas.name": "إقامة الماس",
+  "portfolio.almas.location": "Amizour، بجاية",
+  "portfolio.ighil.name": "Ighil El Bordj",
+  "portfolio.ighil.location": "بجاية",
+  "portfolio.azimour.name": "إقامة أزيمور",
+  "portfolio.azimour.location": "بني كسيلة، بجاية",
+  "portfolio.azimour.highlight":
+    "المشروع الحالي — إقامة راقية على بعد 400 م من البحر، قيد الإنشاء.",
+
+  "qr.title": "رمز QR الرسمي",
+  "qr.desc": "امسح رمز QR الرسمي لشركة بن شلال أ. حليم للاطلاع على معلوماتنا.",
+  "qr.alt": "رمز QR الرسمي لشركة Promotion Benchallal A. Halim",
+};
 
 export const pageTranslations: Record<Locale, Dict> = { fr, en, ar };

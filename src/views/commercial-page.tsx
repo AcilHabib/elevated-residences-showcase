@@ -2,13 +2,8 @@
 
 import { Store, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { COMMERCIAL_SPACES } from "@/lib/commercial-spaces";
 import { useI18n } from "@/lib/i18n";
-
-const categories = [
-  { type: "F2", spaces: [49.75, 56.23, 67.89, 68.02] },
-  { type: "F3", spaces: [80.08, 84.36, 87.18, 89.72, 90.35, 97.37] },
-  { type: "F4", spaces: [170.9] },
-];
 
 export default function CommercialPage() {
   const { t } = useI18n();
@@ -42,7 +37,7 @@ export default function CommercialPage() {
 
       <section className="pb-32">
         <div className="container-luxury space-y-16">
-          {categories.map((cat) => (
+          {COMMERCIAL_SPACES.map((cat) => (
             <Reveal key={cat.type}>
               <div>
                 <div className="flex items-baseline gap-4 mb-8">

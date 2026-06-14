@@ -7,10 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { COMMERCIAL_SPACES, formatCommercialSpace } from "@/lib/commercial-spaces";
 import { useI18n } from "@/lib/i18n";
 
-const faqCount = 5;
+const faqCount = 6;
 const tranches = ["20%", "15%", "35%", "25%", "5%"];
+const comfortItems = [0, 1, 2, 3, 4];
 
 export default function FaqPage() {
   const { t } = useI18n();
@@ -33,13 +35,41 @@ export default function FaqPage() {
         </>
       );
     }
+    if (i === 3) {
+      return (
+        <>
+          <p>{t("faq.3.a.intro")}</p>
+          <ul className="mt-3 space-y-1.5 ml-4 list-disc">
+            {COMMERCIAL_SPACES.map((cat) => (
+              <li key={cat.type}>
+                <span className="font-medium text-foreground">{cat.type}</span>
+                {" — "}
+                {cat.spaces.map(formatCommercialSpace).join(", ")}
+              </li>
+            ))}
+          </ul>
+        </>
+      );
+    }
     if (i === 4) {
       return (
         <>
           <p>{t("faq.4.a.intro")}</p>
           <ul className="mt-3 space-y-1.5 ml-4 list-disc">
-            <li>{t("faq.4.view.sea")}</li>
-            <li>{t("faq.4.view.pool")}</li>
+            {comfortItems.map((j) => (
+              <li key={j}>{t(`faq.4.item.${j}`)}</li>
+            ))}
+          </ul>
+        </>
+      );
+    }
+    if (i === 5) {
+      return (
+        <>
+          <p>{t("faq.5.a.intro")}</p>
+          <ul className="mt-3 space-y-1.5 ml-4 list-disc">
+            <li>{t("faq.5.view.sea")}</li>
+            <li>{t("faq.5.view.pool")}</li>
           </ul>
         </>
       );

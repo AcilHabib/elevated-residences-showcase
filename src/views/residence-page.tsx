@@ -1,15 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Layers, Home } from "lucide-react";
 import { InteractiveSimulationPlaceholder } from "@/components/InteractiveSimulationPlaceholder";
 import { Reveal } from "@/components/Reveal";
 import { ResidenceBlockMap } from "@/components/ResidenceBlockMap";
 import { SimulationsGallery } from "@/components/SimulationsGallery";
 import { useI18n } from "@/lib/i18n";
 import { useResidenceGallery } from "@/lib/simulations";
-
-const blockIds = ["A", "B", "C", "D", "E", "F"];
 
 export default function ResidencePage() {
   const { t } = useI18n();
@@ -51,57 +47,6 @@ export default function ResidencePage() {
       </section>
 
       <InteractiveSimulationPlaceholder />
-
-      <section className="py-20">
-        <div className="container-luxury">
-          <Reveal>
-            <h2 className="font-display text-4xl md:text-5xl mb-12">
-              {t("residence.blocksTitle")}
-            </h2>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blockIds.map((id, i) => (
-              <Reveal key={id} delay={i * 0.05}>
-                <Link
-                  href="/plans"
-                  className="group block rounded-3xl overflow-hidden bg-card border border-border hover:border-gold/40 transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-luxury)]"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={residenceGallery[(i + 1) % residenceGallery.length].src}
-                      alt={`${t("common.block")} ${id}`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-gold-foreground font-display text-2xl shadow-[var(--shadow-gold)]">
-                      {id}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-2xl">
-                      {t("common.block")} {id}
-                    </h3>
-                    <div className="mt-2 flex items-center gap-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                      <span className="flex items-center gap-1.5">
-                        <Layers className="h-3.5 w-3.5 text-gold" /> 5 {t("common.floors")}
-                      </span>
-                      <span className="flex items-center gap-1.5">
-                        <Home className="h-3.5 w-3.5 text-gold" /> {t("common.pdfPlans")}
-                      </span>
-                    </div>
-                    <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                      {t("residence.blockDesc")}
-                    </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-gold group-hover:gap-3 transition-all">
-                      {t("common.viewPlans")} <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <SimulationsGallery
         images={residenceGallery}

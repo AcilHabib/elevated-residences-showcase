@@ -69,9 +69,9 @@ export function CompanyPortfolioSection() {
                       {project.units} {t("portfolio.apartments")}
                     </p>
                   )}
-                  {project.featured && (
+                  {project.highlightKey && (
                     <p className="mt-4 text-sm text-gold/90 leading-relaxed">
-                      {t("portfolio.azimour.highlight")}
+                      {t(project.highlightKey)}
                     </p>
                   )}
                 </article>

@@ -12,6 +12,7 @@ import {
   OFFICE_COORDS,
   OFFICE_MAPS_EMBED_URL,
   OFFICE_MAPS_LINK,
+  RESIDENCE_NAME,
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "@/lib/site";
@@ -36,10 +37,10 @@ export default function ContactPage() {
 
     const header =
       locale === "en"
-        ? "*Quote request — P.B.A / Azimour Residence*"
+        ? `*Quote request — P.B.A / ${RESIDENCE_NAME}*`
         : locale === "ar"
-          ? "*طلب عرض سعر — P.B.A / إقامة أزيمور*"
-          : "*Demande de devis — P.B.A / Résidence Azimour*";
+          ? `*طلب عرض سعر — P.B.A / ${RESIDENCE_NAME}*`
+          : `*Demande de devis — P.B.A / ${RESIDENCE_NAME}*`;
 
     const lines = [
       header,
@@ -202,10 +203,10 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-luxury)] hover:scale-[1.03] transition-transform disabled:opacity-60"
+                  className="mt-8 luxury-btn bg-gradient-to-r from-primary to-[var(--gold)] text-primary-foreground shadow-[var(--shadow-luxury)] hover:scale-[1.03] transition-transform disabled:opacity-60"
                 >
-                  {sending ? t("contact.sending") : t("contact.submit")}
-                  <Send className="h-4 w-4" />
+                  <span>{sending ? t("contact.sending") : t("contact.submit")}</span>
+                  <Send className="h-4 w-4 shrink-0" />
                 </button>
               </form>
             </Reveal>

@@ -42,7 +42,7 @@ export function buildOrganizationJsonLd() {
           name: "Béjaïa, Algérie",
         },
         description:
-          "Promotion immobilière Benchallal A. Halim (Benchallal Immo / P.B.A) — promoteur immobilier à Béjaïa depuis 2014. Résidence Azimour à Bni Ksila, Résidence Almas à Amizour, Ighil El Bordj.",
+          "Promotion immobilière Benchallal A. Halim (Benchallal Immo / P.B.A) — promoteur immobilier à Béjaïa depuis 2014. Résidence Plage de Rêve à Beni Ksila (198 logements), Résidence Almas à Amizour (43 logements), Ighil El Bordj.",
         foundingDate: "2014",
         sameAs: [OFFICE_MAPS_LINK],
       },
@@ -68,12 +68,12 @@ export const DEFAULT_KEYWORDS = [
   "P.B.A Béjaïa",
   "promoteur immobilier Béjaïa",
   "immobilier Béjaïa",
-  "Résidence Azimour",
-  "Bni Ksila",
+  "Résidence Plage de Rêve",
+  "Beni Ksila",
   "Résidence Almas Amizour",
   "Ighil El Bordj",
   "Edimco Béjaïa",
 ];
 
 export const DEFAULT_DESCRIPTION =
-  "Benchallal Immo — Promotion Benchallal A. Halim (P.B.A), promoteur immobilier à Béjaïa depuis 2014. Résidence Azimour à Bni Ksila, Résidence Almas à Amizour, Ighil El Bordj. Bureau Edimco Béjaïa.";
+  "Benchallal Immo — Promotion Benchallal A. Halim (P.B.A), promoteur immobilier à Béjaïa depuis 2014. Résidence Plage de Rêve à Beni Ksila — 198 logements, Résidence Almas à Amizour — 43 logements, Ighil El Bordj. Bureau Edimco Béjaïa.";

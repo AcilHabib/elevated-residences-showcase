@@ -9,6 +9,7 @@ import {
   OFFICE_MAPS_LINK,
   COMPANY_QR_SRC,
   COMPANY_QR_URL,
+  RESIDENCE_COORDS,
   RESIDENCE_NAME,
 } from "@/lib/site";
 
@@ -93,7 +94,7 @@ export function Footer() {
             <MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" />
             <span>
               <strong className="text-foreground/90 block mb-1">{RESIDENCE_NAME}</strong>
-              Bni Ksila, Béjaïa
+              {RESIDENCE_COORDS.place}
               <br />
               <a
                 href={OFFICE_MAPS_LINK}

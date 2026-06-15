@@ -1,12 +1,13 @@
-/** Résidence Azimour — chantier à Bni Ksila (coords from official company QR code) */
+/** Résidence Plage de Rêve — chantier à Beni Ksila (coords from official company QR code) */
 export const RESIDENCE_COORDS = {
   lat: 36.878571,
   lng: 4.666678,
   label: "36°52'43\"N · 4°40'00\"E",
-  place: "Bni Ksila, Béjaïa",
+  place: "Beni Ksila, Béjaïa",
 } as const;
 
-export const RESIDENCE_NAME = "Résidence Azimour";
+export const RESIDENCE_NAME = "Résidence Plage de Rêve";
+export const RESIDENCE_UNITS = 198;
 
 /** Siège & bureau commercial — Edimco, Béjaïa */
 export const OFFICE_COORDS = {
@@ -41,6 +42,7 @@ export type CompanyProject = {
   id: string;
   nameKey: string;
   locationKey: string;
+  highlightKey?: string;
   units?: number;
   status: "completed" | "in_progress";
   featured?: boolean;
@@ -51,7 +53,7 @@ export const COMPANY_PROJECTS: CompanyProject[] = [
     id: "almas",
     nameKey: "portfolio.almas.name",
     locationKey: "portfolio.almas.location",
-    units: 66,
+    units: 43,
     status: "completed",
   },
   {
@@ -62,9 +64,11 @@ export const COMPANY_PROJECTS: CompanyProject[] = [
     status: "completed",
   },
   {
-    id: "azimour",
-    nameKey: "portfolio.azimour.name",
-    locationKey: "portfolio.azimour.location",
+    id: "plage-de-reve",
+    nameKey: "portfolio.plage.name",
+    locationKey: "portfolio.plage.location",
+    highlightKey: "portfolio.plage.highlight",
+    units: RESIDENCE_UNITS,
     status: "in_progress",
     featured: true,
   },

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Layers, Home } from "lucide-react";
 import { InteractiveSimulationPlaceholder } from "@/components/InteractiveSimulationPlaceholder";
 import { Reveal } from "@/components/Reveal";
+import { ResidenceBlockMap } from "@/components/ResidenceBlockMap";
 import { SimulationsGallery } from "@/components/SimulationsGallery";
 import { useI18n } from "@/lib/i18n";
 import { useResidenceGallery } from "@/lib/simulations";
@@ -44,34 +45,7 @@ export default function ResidencePage() {
       <section className="py-20">
         <div className="container-luxury">
           <Reveal>
-            <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-[var(--shadow-luxury)]">
-              <img
-                src="/images/simulations/08.jpg"
-                alt={t("residence.mapAlt")}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
-              <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-4 p-8 md:p-16">
-                {blockIds.map((id, i) => (
-                  <Link
-                    key={id}
-                    href="/plans"
-                    className="group relative flex items-center justify-center"
-                    style={{ animation: `scale-in 0.6s var(--ease-luxury) ${i * 0.1}s both` }}
-                  >
-                    <span className="absolute inset-0 rounded-2xl glass-strong opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="relative flex flex-col items-center gap-2 px-6 py-4">
-                      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/90 text-gold-foreground font-display text-2xl shadow-[var(--shadow-gold)] group-hover:scale-110 transition-transform">
-                        {id}
-                      </span>
-                      <span className="text-xs uppercase tracking-[0.2em] text-foreground font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                        {t("common.viewPlans")}
-                      </span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <ResidenceBlockMap />
           </Reveal>
         </div>
       </section>

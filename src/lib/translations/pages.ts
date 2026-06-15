@@ -25,11 +25,11 @@ const fr: Dict = {
   "home.hero.location": "Béjaïa · Algérie",
   "home.hero.title1": "Votre résidence",
   "home.hero.titleAccent": "de prestige",
-  "home.hero.title2": "à BNI KSILA",
+  "home.hero.title2": "à BENI KSILA",
   "home.hero.subtitle": "Confort, sécurité et qualité de vie à seulement",
   "home.hero.seaDistance": "400 mètres de la mer",
   "home.stat.0": "Blocs résidentiels",
-  "home.stat.1": "Étages au total",
+  "home.stat.1": "Logements",
   "home.stat.2": "De la mer",
   "home.stat.3": "Piscines paysagères",
   "home.advantages.subtitle": "Vos avantages",
@@ -57,7 +57,7 @@ const fr: Dict = {
   "video.title": "La résidence &",
   "video.titleAccent": "P.B.A",
   "video.desc":
-    "Une présentation complète de la Résidence Azimour et de Promotion Benchallal A. Halim — le projet, les espaces et la vision du promoteur.",
+    "Une présentation complète de la Résidence Plage de Rêve et de Promotion Benchallal A. Halim — le projet, les espaces et la vision du promoteur.",
   "video.play": "Lire la vidéo",
 
   "home.gallery.title": "Le projet en images",
@@ -65,7 +65,7 @@ const fr: Dict = {
   "home.overview.subtitle": "Vue d'ensemble",
   "home.overview.title": "Six blocs résidentiels au cœur d'un écrin paysager",
   "home.overview.desc":
-    "Pensée comme un véritable village méditerranéen, la résidence déploie six blocs d'architecture contemporaine autour de jardins luxuriants, de deux piscines paysagères, d'un grand parking, d'une étagère de service, d'une aire de jeux et d'espaces communs soignés. Un équilibre rare entre intimité et art de vivre.",
+    "Pensée comme un véritable village méditerranéen, la Résidence Plage de Rêve déploie 198 logements répartis sur six blocs d'architecture contemporaine autour de jardins luxuriants, de deux piscines paysagères, d'un grand parking, d'une étagère de service, d'une aire de jeux et d'espaces communs soignés. Un équilibre rare entre intimité et art de vivre.",
   "home.overview.block": "5 étages",
   "home.overview.explore": "Explorer la résidence",
   "home.aerial.alt": "Vue aérienne de la résidence",
@@ -91,14 +91,15 @@ const fr: Dict = {
     "Notre équipe commerciale vous accueille pour une présentation personnalisée du projet et des disponibilités.",
   "home.cta.button": "Demander un rendez-vous",
   "home.cta.whatsappMessage":
-    "Bonjour, je souhaite demander un rendez-vous pour visiter la Résidence Azimour.",
+    "Bonjour, je souhaite demander un rendez-vous pour visiter la Résidence Plage de Rêve.",
 
   "residence.subtitle": "La Résidence",
   "residence.title": "Une architecture pensée comme",
   "residence.titleAccent": "un art de vivre",
   "residence.intro":
-    "Six blocs résidentiels, trente étages, des centaines de fenêtres ouvertes sur la Méditerranée. Profitez de deux piscines, d'un parking sécurisé, d'une étagère de service, d'une aire de jeux et d'espaces verts. Découvrez l'implantation des blocs et accédez aux plans détaillés.",
+    "198 logements répartis sur six blocs résidentiels et trente étages, des centaines de fenêtres ouvertes sur la Méditerranée. Profitez de deux piscines, d'un parking sécurisé, d'une étagère de service, d'une aire de jeux et d'espaces verts. Découvrez l'implantation des blocs et accédez aux plans détaillés.",
   "residence.mapAlt": "Plan d'implantation",
+  "residence.mapHint": "Cliquez sur un bloc pour voir les plans",
   "residence.blocksTitle": "Les six blocs",
   "residence.blockDesc":
     "Bloc résidentiel de prestige composé de 5 étages, finitions haut de gamme et vues dégagées.",
@@ -128,13 +129,13 @@ const fr: Dict = {
     "Des opportunités d'investissement stratégiques au sein de la résidence — emplacements à fort potentiel et flux assuré.",
 
   "location.subtitle": "Localisation",
-  "location.title": "Bni Ksila, à",
+  "location.title": "Beni Ksila, à",
   "location.titleAccent": "400 mètres",
   "location.titleEnd": "de la mer",
   "location.intro":
-    "La Résidence Azimour est en cours de réalisation à Bni Ksila, wilaya de Béjaïa. Promotion Benchallal A. Halim (Benchallal Immo) vous accueille également à son bureau Edimco.",
-  "location.projectMapTitle": "Chantier — Résidence Azimour",
-  "location.projectMapDesc": "Localisation du projet en cours à Bni Ksila, commune de Béjaïa.",
+    "La Résidence Plage de Rêve est en cours de réalisation à Beni Ksila, wilaya de Béjaïa — 198 logements à 400 m de la mer. Promotion Benchallal A. Halim (Benchallal Immo) vous accueille également à son bureau Edimco.",
+  "location.projectMapTitle": "Chantier — Résidence Plage de Rêve",
+  "location.projectMapDesc": "Localisation du projet en cours à Beni Ksila, commune de Béjaïa.",
   "location.officeTitle": "Bureau commercial — Edimco Béjaïa",
   "location.officeDesc":
     "Promotion Benchallal Abdelhalim — siège et accueil clients à Edimco, Béjaïa.",
@@ -212,14 +213,14 @@ const fr: Dict = {
   "portfolio.almas.location": "Amizour, Béjaïa",
   "portfolio.ighil.name": "Ighil El Bordj",
   "portfolio.ighil.location": "Béjaïa",
-  "portfolio.azimour.name": "Résidence Azimour",
-  "portfolio.azimour.location": "Bni Ksila, Béjaïa",
-  "portfolio.azimour.highlight":
-    "Projet actuel — résidence de prestige à 400 m de la mer, en cours de construction.",
+  "portfolio.plage.name": "Résidence Plage de Rêve",
+  "portfolio.plage.location": "Beni Ksila, Béjaïa",
+  "portfolio.plage.highlight":
+    "Projet actuel — 198 logements, résidence de prestige à 400 m de la mer, en cours de construction.",
 
   "qr.title": "QR code officiel",
-  "qr.desc": "Scannez pour ouvrir la localisation Google Maps du projet à Bni Ksila.",
-  "qr.alt": "QR code officiel — localisation Résidence Azimour",
+  "qr.desc": "Scannez pour ouvrir la localisation Google Maps du projet à Beni Ksila.",
+  "qr.alt": "QR code officiel — localisation Résidence Plage de Rêve",
   "qr.linkTitle": "Ouvrir la localisation sur Google Maps",
 };
 
@@ -246,11 +247,11 @@ const en: Dict = {
   "home.hero.location": "Béjaïa · Algeria",
   "home.hero.title1": "Your",
   "home.hero.titleAccent": "prestige residence",
-  "home.hero.title2": "in BNI KSILA",
+  "home.hero.title2": "in BENI KSILA",
   "home.hero.subtitle": "Comfort, security and quality of life just",
   "home.hero.seaDistance": "400 meters from the sea",
   "home.stat.0": "Residential blocks",
-  "home.stat.1": "Total floors",
+  "home.stat.1": "Apartments",
   "home.stat.2": "From the sea",
   "home.stat.3": "Landscaped pools",
   "home.advantages.subtitle": "Your advantages",
@@ -278,7 +279,7 @@ const en: Dict = {
   "video.title": "The residence &",
   "video.titleAccent": "P.B.A",
   "video.desc":
-    "A full presentation of Azimour Residence and Promotion Benchallal A. Halim — the project, the spaces and the developer's vision.",
+    "A full presentation of Plage de Rêve Residence and Promotion Benchallal A. Halim — the project, the spaces and the developer's vision.",
   "video.play": "Play video",
 
   "home.gallery.title": "The project in images",
@@ -286,7 +287,7 @@ const en: Dict = {
   "home.overview.subtitle": "Overview",
   "home.overview.title": "Six residential blocks in a landscaped setting",
   "home.overview.desc":
-    "Designed like a true Mediterranean village, the residence features six contemporary blocks surrounded by lush gardens, two landscaped pools, large secure parking, a service counter, a children's playground and refined common areas. A rare balance of privacy and lifestyle.",
+    "Designed like a true Mediterranean village, Plage de Rêve Residence offers 198 apartments across six contemporary blocks surrounded by lush gardens, two landscaped pools, large secure parking, a service counter, a children's playground and refined common areas. A rare balance of privacy and lifestyle.",
   "home.overview.block": "5 floors",
   "home.overview.explore": "Explore the residence",
   "home.aerial.alt": "Aerial view of the residence",
@@ -311,14 +312,15 @@ const en: Dict = {
   "home.cta.desc":
     "Our sales team welcomes you for a personalized presentation of the project and available units.",
   "home.cta.button": "Request an appointment",
-  "home.cta.whatsappMessage": "Hello, I would like to request a visit to Azimour Residence.",
+  "home.cta.whatsappMessage": "Hello, I would like to request a visit to Plage de Rêve Residence.",
 
   "residence.subtitle": "The Residence",
   "residence.title": "Architecture conceived as",
   "residence.titleAccent": "an art of living",
   "residence.intro":
-    "Six residential blocks, thirty floors, hundreds of windows facing the Mediterranean. Enjoy two pools, secure parking, a service counter, a playground and green spaces. Explore the block layout and access detailed plans.",
+    "198 apartments across six residential blocks and thirty floors, with hundreds of windows facing the Mediterranean. Enjoy two pools, secure parking, a service counter, a playground and green spaces. Explore the block layout and access detailed plans.",
   "residence.mapAlt": "Site layout plan",
+  "residence.mapHint": "Click a block to view floor plans",
   "residence.blocksTitle": "The six blocks",
   "residence.blockDesc":
     "Prestige residential block with 5 floors, high-end finishes and open views.",
@@ -348,13 +350,13 @@ const en: Dict = {
     "Strategic investment opportunities within the residence — high-potential locations with steady footfall.",
 
   "location.subtitle": "Location",
-  "location.title": "Bni Ksila,",
+  "location.title": "Beni Ksila,",
   "location.titleAccent": "400 meters",
   "location.titleEnd": "from the sea",
   "location.intro":
-    "Azimour Residence is under construction in Bni Ksila, Béjaïa Province. Benchallal Immo also welcomes you at its Edimco office in Béjaïa.",
-  "location.projectMapTitle": "Construction site — Azimour Residence",
-  "location.projectMapDesc": "Project location in Bni Ksila, Béjaïa Province.",
+    "Plage de Rêve Residence is under construction in Beni Ksila, Béjaïa Province — 198 apartments, 400 m from the sea. Benchallal Immo also welcomes you at its Edimco office in Béjaïa.",
+  "location.projectMapTitle": "Construction site — Plage de Rêve Residence",
+  "location.projectMapDesc": "Project location in Beni Ksila, Béjaïa Province.",
   "location.officeTitle": "Sales office — Edimco Béjaïa",
   "location.officeDesc":
     "Promotion Benchallal Abdelhalim — head office and client reception in Edimco, Béjaïa.",
@@ -425,14 +427,14 @@ const en: Dict = {
   "portfolio.almas.location": "Amizour, Béjaïa",
   "portfolio.ighil.name": "Ighil El Bordj",
   "portfolio.ighil.location": "Béjaïa",
-  "portfolio.azimour.name": "Azimour Residence",
-  "portfolio.azimour.location": "Bni Ksila, Béjaïa",
-  "portfolio.azimour.highlight":
-    "Current project — prestige residence 400 m from the sea, under construction.",
+  "portfolio.plage.name": "Plage de Rêve Residence",
+  "portfolio.plage.location": "Beni Ksila, Béjaïa",
+  "portfolio.plage.highlight":
+    "Current project — 198 apartments, prestige residence 400 m from the sea, under construction.",
 
   "qr.title": "Official QR code",
-  "qr.desc": "Scan to open the Google Maps location of the project in Bni Ksila.",
-  "qr.alt": "Official QR code — Azimour Residence location",
+  "qr.desc": "Scan to open the Google Maps location of the project in Beni Ksila.",
+  "qr.alt": "Official QR code — Plage de Rêve Residence location",
   "qr.linkTitle": "Open location in Google Maps",
 };
 
@@ -463,7 +465,7 @@ const ar: Dict = {
   "home.hero.subtitle": "راحة وأمان وجودة حياة على بعد",
   "home.hero.seaDistance": "400 متراً من البحر",
   "home.stat.0": "أبراج سكنية",
-  "home.stat.1": "إجمالي الطوابق",
+  "home.stat.1": "شقة سكنية",
   "home.stat.2": "من البحر",
   "home.stat.3": "مسابح منسقة",
   "home.advantages.subtitle": "مزاياكم",
@@ -490,7 +492,8 @@ const ar: Dict = {
   "video.subtitle": "اكتشفوا بالفيديو",
   "video.title": "الإقامة و",
   "video.titleAccent": "P.B.A",
-  "video.desc": "عرض شامل لإقامة أزيمور وشركة بن شلال أ. حليم — المشروع والمساحات ورؤية المطور.",
+  "video.desc":
+    "عرض شامل لإقامة Plage de Rêve وشركة بن شلال أ. حليم — المشروع والمساحات ورؤية المطور.",
   "video.play": "تشغيل الفيديو",
 
   "home.gallery.title": "المشروع بالصور",
@@ -498,7 +501,7 @@ const ar: Dict = {
   "home.overview.subtitle": "نظرة عامة",
   "home.overview.title": "ستة أبراج سكنية في قلب مساحة خضراء",
   "home.overview.desc":
-    "مصممة كقرية متوسطية حقيقية، تضم الإقامة ستة أبراج معمارية عصرية محاطة بحدائق ومسبحين منسقين وموقف سيارات واسع وإطار خدمات وملعب للأطفال ومساحات مشتركة. توازن نادر بين الخصوصية وجودة الحياة.",
+    "مصممة كقرية متوسطية حقيقية، تضم إقامة Plage de Rêve 198 شقة موزعة على ستة أبراج معمارية عصرية محاطة بحدائق ومسبحين منسقين وموقف سيارات واسع وإطار خدمات وملعب للأطفال ومساحات مشتركة. توازن نادر بين الخصوصية وجودة الحياة.",
   "home.overview.block": "5 طوابق",
   "home.overview.explore": "استكشف الإقامة",
   "home.aerial.alt": "منظر جوي للإقامة",
@@ -522,7 +525,7 @@ const ar: Dict = {
   "home.cta.titleAccent": "زيارتكم الخاصة",
   "home.cta.desc": "فريقنا التجاري يستقبلكم لعرض مخصص للمشروع والوحدات المتاحة.",
   "home.cta.button": "طلب موعد",
-  "home.cta.whatsappMessage": "مرحباً، أود طلب موعد لزيارة إقامة أزيمور.",
+  "home.cta.whatsappMessage": "مرحباً، أود طلب موعد لزيارة إقامة Plage de Rêve.",
 
   "residence.subtitle": "الإقامة",
   "residence.title": "عمارة مصممة كـ",
@@ -530,8 +533,9 @@ const ar: Dict = {
   "home.residence.intro":
     "ستة أبراج سكنية، ثلاثون طابقاً، مئات النوافذ المطلة على المتوسط. اكتشفوا مخطط البلوكات التفاعلي واطلعوا على المخططات التفصيلية.",
   "residence.intro":
-    "ستة أبراج سكنية، ثلاثون طابقاً، مئات النوافذ المطلة على المتوسط. استمتعوا بمسبحين وموقف آمن وإطار خدمات وملعب للأطفال ومساحات خضراء. اكتشفوا مخطط الأبراج واطلعوا على المخططات التفصيلية.",
+    "198 شقة موزعة على ستة أبراج سكنية وثلاثين طابقاً، ومئات النوافذ المطلة على المتوسط. استمتعوا بمسبحين وموقف آمن وإطار خدمات وملعب للأطفال ومساحات خضراء. اكتشفوا مخطط الأبراج واطلعوا على المخططات التفصيلية.",
   "residence.mapAlt": "مخطط التوزيع",
+  "residence.mapHint": "انقر على بلوك لعرض المخططات",
   "residence.blocksTitle": "الستة أبراج",
   "residence.blockDesc": "برج سكني راقٍ من 5 طوابق، تشطيبات عالية الجودة وإطلالات مفتوحة.",
   "residence.gallery.title": "تصور الإقامة",
@@ -562,8 +566,8 @@ const ar: Dict = {
   "location.titleAccent": "400 متراً",
   "location.titleEnd": "من البحر",
   "location.intro":
-    "إقامة أزيمور قيد الإنجاز في بني كسيلة، ولاية بجاية. تستقبلكم Benchallal Immo أيضاً في مكتبها بإيديمكو بجاية.",
-  "location.projectMapTitle": "ورشة الإنجاز — إقامة أزيمور",
+    "إقامة Plage de Rêve قيد الإنجاز في بني كسيلة، ولاية بجاية — 198 شقة على بعد 400 م من البحر. تستقبلكم Benchallal Immo أيضاً في مكتبها بإيديمكو بجاية.",
+  "location.projectMapTitle": "ورشة الإنجاز — إقامة Plage de Rêve",
   "location.projectMapDesc": "موقع المشروع في بني كسيلة، ولاية بجاية.",
   "location.officeTitle": "المكتب التجاري — إيديمكو بجاية",
   "location.officeDesc":
@@ -632,14 +636,14 @@ const ar: Dict = {
   "portfolio.almas.location": "Amizour، بجاية",
   "portfolio.ighil.name": "Ighil El Bordj",
   "portfolio.ighil.location": "بجاية",
-  "portfolio.azimour.name": "إقامة أزيمور",
-  "portfolio.azimour.location": "بني كسيلة، بجاية",
-  "portfolio.azimour.highlight":
-    "المشروع الحالي — إقامة راقية على بعد 400 م من البحر، قيد الإنشاء.",
+  "portfolio.plage.name": "إقامة Plage de Rêve",
+  "portfolio.plage.location": "بني كسيلة، بجاية",
+  "portfolio.plage.highlight":
+    "المشروع الحالي — 198 شقة، إقامة راقية على بعد 400 م من البحر، قيد الإنشاء.",
 
   "qr.title": "رمز QR الرسمي",
   "qr.desc": "امسح الرمز لفتح موقع المشروع على خرائط Google في بني كسيلة.",
-  "qr.alt": "رمز QR الرسمي — موقع إقامة أزيمور",
+  "qr.alt": "رمز QR الرسمي — موقع إقامة Plage de Rêve",
   "qr.linkTitle": "فتح الموقع في خرائط Google",
 };
 

@@ -37,36 +37,43 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled ? "glass-strong shadow-[var(--shadow-soft)]" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b transition-all duration-500",
+        scrolled
+          ? "glass-strong shadow-[var(--shadow-soft)] border-border/70"
+          : "border-border/50 bg-background/95 backdrop-blur-xl shadow-[0_8px_32px_color-mix(in_oklab,var(--background)_40%,transparent)]",
       )}
     >
-      <div className="container-luxury flex h-28 md:h-32 items-center justify-between gap-4">
-        <Link href="/" className="flex shrink-0 items-center py-1">
-          <Logo className="h-[3.25rem] min-w-[220px] sm:h-[3.75rem] sm:min-w-[260px] md:h-[4.75rem] md:min-w-[300px] lg:h-[5.25rem] lg:min-w-[340px]" />
+      <div className="container-luxury flex h-[5.25rem] md:h-24 lg:h-28 items-center justify-between gap-3 lg:gap-4">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center rounded-xl bg-background/95 px-2 py-1.5 ring-1 ring-border/50 shadow-sm"
+        >
+          <Logo
+            priority
+            className="h-[3.25rem] w-auto sm:h-14 md:h-[4.25rem] lg:h-20 xl:h-[5.25rem]"
+          />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex flex-1 items-stretch gap-0.5 rounded-full border border-border/60 bg-background/80 px-1 py-1 shadow-sm mx-1 min-w-0 max-w-[44rem] xl:max-w-[48rem]">
           {nav.map((item) => (
             <Link
               key={item.to}
               href={item.to}
               className={cn(
-                "relative px-3 py-2 text-[13px] font-medium uppercase tracking-[0.12em] transition-colors",
-                pathname === item.to ? "text-gold" : "text-foreground/80 hover:text-foreground",
+                "luxury-nav-link relative flex-1 min-w-0 rounded-full text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors",
+                pathname === item.to
+                  ? "bg-gold/15 text-gold"
+                  : "text-foreground/90 hover:bg-foreground/5 hover:text-foreground",
               )}
             >
               {item.label}
-              {pathname === item.to && (
-                <span className="absolute -bottom-0.5 left-3 right-3 h-px bg-gold" />
-              )}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <div className="hidden md:flex items-center gap-1 glass rounded-full px-1 py-1">
-            <Globe className="h-3.5 w-3.5 text-muted-foreground mx-1.5" />
+        <div className="flex items-center gap-2 shrink-0">
+          <div className="hidden md:flex items-center gap-1 rounded-full border border-border/60 bg-background/80 px-1 py-1 shadow-sm">
+            <Globe className="h-3.5 w-3.5 text-muted-foreground mx-1.5 shrink-0" />
             {(["fr", "en", "ar"] as Locale[]).map((l) => (
               <button
                 key={l}
@@ -86,20 +93,20 @@ export function Header() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="glass rounded-full p-2.5 text-foreground/80 hover:text-gold transition-colors"
+            className="rounded-full border border-border/60 bg-background/80 p-2.5 text-foreground/80 shadow-sm hover:text-gold transition-colors shrink-0"
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
 
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
+            className="hidden md:inline-flex luxury-btn luxury-btn-sm max-w-[8.5rem] shrink-0 bg-gradient-to-r from-primary to-[var(--gold)] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
           >
             {t("cta.rdv")}
           </Link>
 
           <button
-            className="lg:hidden glass rounded-full p-2.5"
+            className="lg:hidden rounded-full border border-border/60 bg-background/80 p-2.5 shadow-sm shrink-0"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
@@ -115,7 +122,12 @@ export function Header() {
               <Link
                 key={item.to}
                 href={item.to}
-                className="py-3 text-sm font-medium uppercase tracking-[0.12em] text-foreground/80"
+                className={cn(
+                  "luxury-nav-link rounded-xl px-3 py-3 text-sm font-medium uppercase tracking-[0.1em] transition-colors",
+                  pathname === item.to
+                    ? "bg-gold/10 text-gold"
+                    : "text-foreground/80 hover:bg-foreground/5",
+                )}
               >
                 {item.label}
               </Link>

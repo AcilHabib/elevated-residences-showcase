@@ -49,7 +49,7 @@ export default function HomePage() {
 
   const stats = [
     { v: 6, s: "", l: t("home.stat.0") },
-    { v: 30, s: "", l: t("home.stat.1") },
+    { v: 198, s: "", l: t("home.stat.1") },
     { v: 400, s: " m", l: t("home.stat.2") },
     { v: 2, s: "", l: t("home.stat.3") },
   ];
@@ -107,22 +107,22 @@ export default function HomePage() {
             </p>
 
             <div
-              className="mt-10 flex flex-wrap gap-4"
+              className="luxury-btn-row mt-10"
               style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.4s both" }}
             >
               <Link
                 href="/residence"
-                className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-primary to-[var(--gold)] px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
+                className="group luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] bg-gradient-to-r from-primary to-[var(--gold)] text-primary-foreground shadow-[var(--shadow-luxury)] transition-transform hover:scale-[1.03]"
               >
-                {t("cta.discover")}
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <span>{t("cta.discover")}</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href="#brochure"
-                className="group inline-flex items-center gap-3 rounded-full glass px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-foreground hover:border-gold/50 transition-colors"
+                className="group luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] glass text-foreground hover:border-gold/50 transition-colors"
               >
-                <Download className="h-4 w-4" />
-                {t("cta.brochure")}
+                <Download className="h-4 w-4 shrink-0" />
+                <span>{t("cta.brochure")}</span>
               </a>
             </div>
           </div>
@@ -306,20 +306,21 @@ export default function HomePage() {
                 <p className="mt-6 text-primary-foreground/80 max-w-xl mx-auto">
                   {t("home.cta.desc")}
                 </p>
-                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <div className="luxury-btn-row mt-10 justify-center">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.03] transition-transform"
+                    className="luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] bg-gold text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.03] transition-transform"
                   >
-                    {t("home.cta.button")} <ArrowRight className="h-4 w-4" />
+                    <span>{t("home.cta.button")}</span>
+                    <ArrowRight className="h-4 w-4 shrink-0" />
                   </Link>
                   <a
                     href={buildWhatsAppUrl(t("home.cta.whatsappMessage"))}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full glass-strong px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary-foreground"
+                    className="luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] glass-strong text-primary-foreground"
                   >
-                    WhatsApp {WHATSAPP_DISPLAY}
+                    <span>WhatsApp {WHATSAPP_DISPLAY}</span>
                   </a>
                 </div>
               </div>

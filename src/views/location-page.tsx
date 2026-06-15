@@ -95,7 +95,7 @@ export default function LocationPage() {
             </div>
             <div className="rounded-3xl overflow-hidden border border-border shadow-[var(--shadow-luxury)] aspect-[16/9]">
               <iframe
-                title={`${RESIDENCE_NAME} — Bni Ksila`}
+                title={`${RESIDENCE_NAME} — ${RESIDENCE_COORDS.place}`}
                 src={MAPS_EMBED_URL}
                 className="h-full w-full"
                 loading="lazy"

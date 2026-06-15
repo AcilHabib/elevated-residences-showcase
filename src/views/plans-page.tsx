@@ -158,7 +158,7 @@ export default function PlansPage() {
                 <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-4">
                   {t("plans.step2")} — {activeCategory.label}
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap items-stretch gap-3">
                   {activeCategory.variants.map((variant) => {
                     const available = isUnitAvailable(
                       availability,
@@ -173,7 +173,7 @@ export default function PlansPage() {
                         disabled={!available}
                         onClick={() => selectType(variant.type)}
                         className={cn(
-                          "rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] border transition-all",
+                          "luxury-btn luxury-btn-sm min-w-[7.5rem] rounded-full border transition-all",
                           !available &&
                             "opacity-50 cursor-not-allowed border-border bg-muted text-muted-foreground",
                           available &&
@@ -208,23 +208,23 @@ export default function PlansPage() {
                     </p>
                     <p className="mt-1 font-display text-2xl">{t("plans.viewerTitle")}</p>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap items-stretch gap-2">
                     <a
                       href={activeVariant.pdf}
                       download
-                      className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] hover:border-gold hover:text-gold transition-colors"
+                      className="luxury-btn luxury-btn-sm glass border border-border hover:border-gold hover:text-gold transition-colors"
                     >
-                      <Download className="h-4 w-4" />
-                      {t("common.download")}
+                      <Download className="h-4 w-4 shrink-0" />
+                      <span>{t("common.download")}</span>
                     </a>
                     <a
                       href={activeVariant.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.02] transition-transform"
+                      className="luxury-btn luxury-btn-sm bg-gold text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.02] transition-transform"
                     >
-                      <ExternalLink className="h-4 w-4" />
-                      {t("plans.openNewTab")}
+                      <ExternalLink className="h-4 w-4 shrink-0" />
+                      <span>{t("plans.openNewTab")}</span>
                     </a>
                   </div>
                 </div>

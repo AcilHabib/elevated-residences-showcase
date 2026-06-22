@@ -30,6 +30,8 @@ export const COMPANY_QR_SRC = "/images/company-qr.png";
 export const COMPANY_QR_URL = MAPS_LINK_URL;
 
 export const COMPANY_EMAIL = "promotion.benchallal@gmail.com";
+/** RDV & quote requests — commercial department */
+export const COMMERCIAL_EMAIL = "commercialbenchallal@gmail.com";
 export const COMPANY_LEGAL_NAME = "Promotion Benchallal A. Halim";
 export const COMPANY_SEO_NAMES = [
   "Benchallal Immo",
@@ -43,8 +45,9 @@ export type CompanyProject = {
   nameKey: string;
   locationKey: string;
   highlightKey?: string;
+  statusKey: string;
   units?: number;
-  status: "completed" | "in_progress";
+  status: "in_progress" | "soon";
   featured?: boolean;
 };
 
@@ -53,23 +56,26 @@ export const COMPANY_PROJECTS: CompanyProject[] = [
     id: "almas",
     nameKey: "portfolio.almas.name",
     locationKey: "portfolio.almas.location",
+    statusKey: "portfolio.almas.status",
     units: 43,
-    status: "completed",
+    status: "in_progress",
   },
   {
     id: "ighil",
     nameKey: "portfolio.ighil.name",
     locationKey: "portfolio.ighil.location",
+    statusKey: "portfolio.ighil.status",
     units: 66,
-    status: "completed",
+    status: "soon",
   },
   {
     id: "plage-de-reve",
     nameKey: "portfolio.plage.name",
     locationKey: "portfolio.plage.location",
     highlightKey: "portfolio.plage.highlight",
+    statusKey: "portfolio.plage.status",
     units: RESIDENCE_UNITS,
-    status: "in_progress",
+    status: "soon",
     featured: true,
   },
 ];
@@ -83,6 +89,18 @@ export const WHATSAPP_DISPLAY = "0770 03 18 69";
 
 export function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+export function buildMailtoUrl({
+  to = COMMERCIAL_EMAIL,
+  subject,
+  body,
+}: {
+  to?: string;
+  subject: string;
+  body: string;
+}) {
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export function getSiteUrl() {

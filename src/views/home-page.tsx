@@ -11,7 +11,6 @@ import {
   Building2,
   Sparkles,
   Trees,
-  Warehouse,
   Baby,
   ArrowRight,
   Thermometer,
@@ -21,6 +20,9 @@ import {
   Gem,
   Layers,
   Download,
+  Mail,
+  Route,
+  Store,
 } from "lucide-react";
 import interiorImg from "@/assets/interior-luxury.jpg";
 import { AboutSection } from "@/components/AboutSection";
@@ -33,9 +35,9 @@ import { SimulationsGallery } from "@/components/SimulationsGallery";
 import { Counter } from "@/components/Counter";
 import { useI18n } from "@/lib/i18n";
 import { useSimulationImages } from "@/lib/simulations";
-import { buildWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/site";
+import { COMMERCIAL_EMAIL, buildMailtoUrl } from "@/lib/site";
 
-const advantageIcons = [Waves, Shield, Camera, Waves, Car, Warehouse, Baby, Trees, Sparkles];
+const advantageIcons = [Waves, Shield, Camera, Waves, Car, Store, Baby, Trees, Sparkles, Route];
 const featureIcons = [Thermometer, Square, Volume2, ChefHat, Gem, Layers];
 const blockIds = ["A", "B", "C", "D", "E", "F"];
 
@@ -315,12 +317,14 @@ export default function HomePage() {
                     <ArrowRight className="h-4 w-4 shrink-0" />
                   </Link>
                   <a
-                    href={buildWhatsAppUrl(t("home.cta.whatsappMessage"))}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={buildMailtoUrl({
+                      subject: t("home.cta.emailSubject"),
+                      body: t("home.cta.emailBody"),
+                    })}
                     className="luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] glass-strong text-primary-foreground"
                   >
-                    <span>WhatsApp {WHATSAPP_DISPLAY}</span>
+                    <Mail className="h-4 w-4 shrink-0" />
+                    <span>{COMMERCIAL_EMAIL}</span>
                   </a>
                 </div>
               </div>

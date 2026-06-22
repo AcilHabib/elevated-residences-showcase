@@ -8,7 +8,8 @@ import { QrCodeCard } from "@/components/QrCodeCard";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/lib/i18n";
 import {
-  buildWhatsAppUrl,
+  buildMailtoUrl,
+  COMMERCIAL_EMAIL,
   OFFICE_COORDS,
   OFFICE_MAPS_EMBED_URL,
   OFFICE_MAPS_LINK,
@@ -37,10 +38,10 @@ export default function ContactPage() {
 
     const header =
       locale === "en"
-        ? `*Quote request — P.B.A / ${RESIDENCE_NAME}*`
+        ? `Quote request — P.B.A / ${RESIDENCE_NAME}`
         : locale === "ar"
-          ? `*طلب عرض سعر — P.B.A / ${RESIDENCE_NAME}*`
-          : `*Demande de devis — P.B.A / ${RESIDENCE_NAME}*`;
+          ? `طلب عرض سعر — P.B.A / ${RESIDENCE_NAME}`
+          : `Demande de devis — P.B.A / ${RESIDENCE_NAME}`;
 
     const lines = [
       header,
@@ -64,8 +65,11 @@ export default function ContactPage() {
       message,
     ].filter(Boolean);
 
-    const url = buildWhatsAppUrl(lines.join("\n"));
-    window.open(url, "_blank", "noopener,noreferrer");
+    const url = buildMailtoUrl({
+      subject: header,
+      body: lines.join("\n"),
+    });
+    window.location.href = url;
 
     setTimeout(() => {
       setSending(false);
@@ -137,7 +141,7 @@ export default function ContactPage() {
 
             <Reveal delay={0.16}>
               <a
-                href="mailto:promotion.benchallal@gmail.com"
+                href={`mailto:${COMMERCIAL_EMAIL}`}
                 className="flex items-center gap-4 p-6 rounded-3xl bg-card border border-border hover:border-gold/40 transition-colors"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
@@ -146,6 +150,23 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     {t("contact.email")}
+                  </p>
+                  <p className="font-display text-lg break-all">{COMMERCIAL_EMAIL}</p>
+                </div>
+              </a>
+            </Reveal>
+
+            <Reveal delay={0.16}>
+              <a
+                href="mailto:promotion.benchallal@gmail.com"
+                className="flex items-center gap-4 p-6 rounded-3xl bg-card border border-border hover:border-gold/40 transition-colors"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    {t("contact.generalEmail")}
                   </p>
                   <p className="font-display text-lg break-all">promotion.benchallal@gmail.com</p>
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, CheckCircle2, HardHat } from "lucide-react";
+import { Building2, Clock, HardHat } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
 import { COMPANY_PROJECTS } from "@/lib/site";
@@ -44,21 +44,19 @@ export function CompanyPortfolioSection() {
                 >
                   <div className="flex items-start justify-between gap-3 mb-5">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
-                      {inProgress ? (
-                        <HardHat className="h-6 w-6" />
-                      ) : (
-                        <CheckCircle2 className="h-6 w-6" />
-                      )}
+                      {inProgress ? <HardHat className="h-6 w-6" /> : <Clock className="h-6 w-6" />}
                     </div>
                     <span
                       className={cn(
                         "text-[10px] uppercase tracking-[0.18em] font-semibold rounded-full px-3 py-1",
-                        inProgress
+                        project.featured
                           ? "bg-gold/15 text-gold border border-gold/30"
-                          : "bg-muted text-muted-foreground",
+                          : inProgress
+                            ? "bg-gold/15 text-gold border border-gold/30"
+                            : "bg-muted text-muted-foreground",
                       )}
                     >
-                      {inProgress ? t("portfolio.status.progress") : t("portfolio.status.done")}
+                      {t(project.statusKey)}
                     </span>
                   </div>
                   <h3 className="font-display text-2xl">{t(project.nameKey)}</h3>

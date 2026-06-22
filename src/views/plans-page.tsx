@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Download, ExternalLink, FileText } from "lucide-react";
+import { Download, ExternalLink, FileText, ImageIcon } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
 import { useAvailability } from "@/hooks/use-availability";
@@ -14,6 +14,8 @@ import {
 } from "@/lib/apartment-plans";
 import { isUnitAvailable } from "@/lib/availability.types";
 import { useI18n } from "@/lib/i18n";
+
+type PlanViewMode = "3d" | "pdf";
 
 function parseHash(): { category: ApartmentCategory | null; type: number | null } {
   if (typeof window === "undefined") return { category: null, type: null };
@@ -29,6 +31,7 @@ export default function PlansPage() {
   const { map: availability } = useAvailability();
   const [category, setCategory] = useState<ApartmentCategory | null>(null);
   const [selectedType, setSelectedType] = useState<number | null>(null);
+  const [viewMode, setViewMode] = useState<PlanViewMode>("3d");
 
   const applyHash = useCallback(() => {
     const { category: cat, type } = parseHash();
@@ -38,8 +41,10 @@ export default function PlansPage() {
     setCategory(cat);
     if (type && planCat.variants.some((v) => v.type === type)) {
       setSelectedType(type);
+      setViewMode("3d");
     } else if (planCat.variants.length === 1) {
       setSelectedType(1);
+      setViewMode("3d");
     } else {
       setSelectedType(null);
     }
@@ -55,6 +60,7 @@ export default function PlansPage() {
   const activeVariant = category && selectedType ? getPlanVariant(category, selectedType) : null;
   const activeAvailable =
     activeVariant && category ? isUnitAvailable(availability, category, activeVariant.type) : false;
+  const activeViewMode: PlanViewMode = viewMode === "3d" && activeVariant?.image3d ? "3d" : "pdf";
 
   const countAvailable = (catId: ApartmentCategory) => {
     const cat = getApartmentCategory(catId);
@@ -70,6 +76,7 @@ export default function PlansPage() {
       const onlyType = planCat.variants[0].type;
       if (isUnitAvailable(availability, id, onlyType)) {
         setSelectedType(onlyType);
+        setViewMode("3d");
         window.history.replaceState(null, "", `#${id}-${onlyType}`);
       } else {
         setSelectedType(null);
@@ -85,6 +92,7 @@ export default function PlansPage() {
     if (!category) return;
     if (!isUnitAvailable(availability, category, type)) return;
     setSelectedType(type);
+    setViewMode("3d");
     window.history.replaceState(null, "", `#${category}-${type}`);
   };
 
@@ -206,9 +214,43 @@ export default function PlansPage() {
                     <p className="text-xs uppercase tracking-[0.25em] text-gold font-semibold">
                       {activeCategory?.label} — {t("plans.type")} {activeVariant.type}
                     </p>
-                    <p className="mt-1 font-display text-2xl">{t("plans.viewerTitle")}</p>
+                    <p className="mt-1 font-display text-2xl">
+                      {activeViewMode === "3d"
+                        ? t("plans.viewer3dTitle")
+                        : t("plans.viewerPdfTitle")}
+                    </p>
                   </div>
                   <div className="flex flex-wrap items-stretch gap-2">
+                    <div className="flex rounded-full border border-border bg-muted/30 p-1">
+                      <button
+                        type="button"
+                        disabled={!activeVariant.image3d}
+                        onClick={() => setViewMode("3d")}
+                        className={cn(
+                          "inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors",
+                          activeViewMode === "3d"
+                            ? "bg-gold text-gold-foreground"
+                            : "text-muted-foreground hover:text-foreground",
+                          !activeVariant.image3d && "cursor-not-allowed opacity-45",
+                        )}
+                      >
+                        <ImageIcon className="h-4 w-4 shrink-0" />
+                        <span>{t("plans.view3d")}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setViewMode("pdf")}
+                        className={cn(
+                          "inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors",
+                          activeViewMode === "pdf"
+                            ? "bg-gold text-gold-foreground"
+                            : "text-muted-foreground hover:text-foreground",
+                        )}
+                      >
+                        <FileText className="h-4 w-4 shrink-0" />
+                        <span>{t("plans.viewPdf")}</span>
+                      </button>
+                    </div>
                     <a
                       href={activeVariant.pdf}
                       download
@@ -218,7 +260,11 @@ export default function PlansPage() {
                       <span>{t("common.download")}</span>
                     </a>
                     <a
-                      href={activeVariant.pdf}
+                      href={
+                        activeViewMode === "3d" && activeVariant.image3d
+                          ? activeVariant.image3d
+                          : activeVariant.pdf
+                      }
                       target="_blank"
                       rel="noopener noreferrer"
                       className="luxury-btn luxury-btn-sm bg-gold text-gold-foreground shadow-[var(--shadow-gold)] hover:scale-[1.02] transition-transform"
@@ -229,11 +275,21 @@ export default function PlansPage() {
                   </div>
                 </div>
                 <div className="bg-muted/30 p-2 md:p-4">
-                  <iframe
-                    title={`${activeCategory?.label} ${t("plans.type")} ${activeVariant.type}`}
-                    src={`${activeVariant.pdf}#view=FitH`}
-                    className="w-full h-[70vh] min-h-[480px] rounded-xl border border-border bg-white"
-                  />
+                  {activeViewMode === "3d" && activeVariant.image3d ? (
+                    <div className="flex min-h-[480px] items-center justify-center rounded-xl border border-border bg-white p-2">
+                      <img
+                        src={activeVariant.image3d}
+                        alt={`${activeCategory?.label} ${t("plans.type")} ${activeVariant.type} — ${t("plans.view3d")}`}
+                        className="max-h-[78vh] w-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <iframe
+                      title={`${activeCategory?.label} ${t("plans.type")} ${activeVariant.type}`}
+                      src={`${activeVariant.pdf}#view=FitH`}
+                      className="h-[70vh] min-h-[480px] w-full rounded-xl border border-border bg-white"
+                    />
+                  )}
                 </div>
               </div>
             </Reveal>

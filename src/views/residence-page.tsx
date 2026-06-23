@@ -31,9 +31,11 @@ export default function ResidencePage() {
               {t("residence.title")}{" "}
               <span className="italic text-gradient-gold">{t("residence.titleAccent")}</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-              {t("residence.intro")}
-            </p>
+            <div className="mt-6 max-w-2xl space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>{t("residence.intro.0")}</p>
+              <p>{t("residence.intro.1")}</p>
+              <p>{t("residence.intro.2")}</p>
+            </div>
           </Reveal>
         </div>
       </section>

@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { COMMERCIAL_SPACES, formatCommercialSpace } from "@/lib/commercial-spaces";
+import { formatSurface, RETAIL_SPACES } from "@/lib/commercial-spaces";
 import { useI18n } from "@/lib/i18n";
 
 const faqCount = 6;
@@ -40,11 +40,13 @@ export default function FaqPage() {
         <>
           <p>{t("faq.3.a.intro")}</p>
           <ul className="mt-3 space-y-1.5 ml-4 list-disc">
-            {COMMERCIAL_SPACES.map((cat) => (
-              <li key={cat.type}>
-                <span className="font-medium text-foreground">{cat.type}</span>
+            {RETAIL_SPACES.map((space) => (
+              <li key={space.id}>
+                <span className="font-medium text-foreground">
+                  {t("commercial.retailLabel")} {space.id}
+                </span>
                 {" — "}
-                {cat.spaces.map(formatCommercialSpace).join(", ")}
+                {formatSurface(space.surface)}
               </li>
             ))}
           </ul>
@@ -68,7 +70,7 @@ export default function FaqPage() {
         <>
           <p>{t("faq.5.a.intro")}</p>
           <ul className="mt-3 space-y-1.5 ml-4 list-disc">
-            <li>{t("faq.5.view.sea")}</li>
+            <li>{t("faq.5.view.open")}</li>
             <li>{t("faq.5.view.pool")}</li>
           </ul>
         </>

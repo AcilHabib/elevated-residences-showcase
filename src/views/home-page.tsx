@@ -10,7 +10,6 @@ import {
   Camera,
   Building2,
   Sparkles,
-  Trees,
   Baby,
   ArrowRight,
   Thermometer,
@@ -23,6 +22,7 @@ import {
   Mail,
   Route,
   Store,
+  MapPin,
 } from "lucide-react";
 import interiorImg from "@/assets/interior-luxury.jpg";
 import { AboutSection } from "@/components/AboutSection";
@@ -37,7 +37,8 @@ import { useI18n } from "@/lib/i18n";
 import { useSimulationImages } from "@/lib/simulations";
 import { COMMERCIAL_EMAIL, buildMailtoUrl } from "@/lib/site";
 
-const advantageIcons = [Waves, Shield, Camera, Waves, Car, Store, Baby, Trees, Sparkles, Route];
+const advantageCount = 9;
+const advantageIcons = [Route, Shield, Camera, Waves, Car, Store, Baby, MapPin, Sparkles];
 const featureIcons = [Thermometer, Square, Volume2, ChefHat, Gem, Layers];
 const blockIds = ["A", "B", "C", "D", "E", "F"];
 
@@ -52,7 +53,7 @@ export default function HomePage() {
   const stats = [
     { v: 6, s: "", l: t("home.stat.0") },
     { v: 198, s: "", l: t("home.stat.1") },
-    { v: 400, s: " m", l: t("home.stat.2") },
+    { v: 500, s: " m", l: t("home.stat.2") },
     { v: 2, s: "", l: t("home.stat.3") },
   ];
 
@@ -105,7 +106,7 @@ export default function HomePage() {
               style={{ animation: "fade-up 0.9s var(--ease-luxury) 0.2s both" }}
             >
               {t("home.hero.subtitle")}{" "}
-              <span className="text-gold font-medium">{t("home.hero.seaDistance")}</span>.
+              <span className="text-gold font-medium">{t("home.hero.routeDistance")}</span>.
             </p>
 
             <div
@@ -166,22 +167,25 @@ export default function HomePage() {
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {advantageIcons.map((Icon, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <div className="group relative h-full p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-luxury)]">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/0 to-gold/0 group-hover:from-gold/5 group-hover:to-transparent transition-all duration-500" />
-                  <div className="relative">
-                    <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-gold/10 text-gold mb-5 group-hover:scale-110 transition-transform">
-                      <Icon className="h-5 w-5" />
+            {Array.from({ length: advantageCount }, (_, i) => {
+              const Icon = advantageIcons[i] ?? MapPin;
+              return (
+                <Reveal key={i} delay={i * 0.06}>
+                  <div className="group relative h-full p-7 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-luxury)]">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/0 to-gold/0 group-hover:from-gold/5 group-hover:to-transparent transition-all duration-500" />
+                    <div className="relative">
+                      <div className="inline-flex items-center justify-center h-12 w-12 rounded-xl bg-gold/10 text-gold mb-5 group-hover:scale-110 transition-transform">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-display text-xl mb-2">{t(`home.adv.${i}.title`)}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {t(`home.adv.${i}.desc`)}
+                      </p>
                     </div>
-                    <h3 className="font-display text-xl mb-2">{t(`home.adv.${i}.title`)}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {t(`home.adv.${i}.desc`)}
-                    </p>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

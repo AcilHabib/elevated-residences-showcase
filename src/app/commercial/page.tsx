@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import CommercialPage from "@/views/commercial-page";
 
 export const metadata: Metadata = {
-  title: "Locaux commerciaux",
+  title: "Appartements & locaux commerciaux",
   description:
-    "Opportunités d'investissement : locaux commerciaux F2, F3 et F4 au sein de la résidence.",
+    "Surfaces des appartements F2, F3 et F4, et locaux commerciaux au rez-de-chaussée — Résidence Plage de Rêve.",
 };
 
 export default function Page() {

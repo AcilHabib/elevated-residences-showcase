@@ -26,7 +26,7 @@ const base: Record<Locale, Dict> = {
     "footer.copyright": "Promotion Immobilière Benchallal A. Halim — P.B.A. Tous droits réservés.",
     "footer.link.residence": "La Résidence",
     "footer.link.plans": "Plans d'étage",
-    "footer.link.commercial": "Locaux commerciaux",
+    "footer.link.commercial": "Appartements",
     "footer.link.location": "Localisation",
 
     "about.subtitle": "Qui sommes-nous",
@@ -48,6 +48,7 @@ const base: Record<Locale, Dict> = {
     "awards.event": "8ème édition du Salon du Promoteur Immobilier à Béjaïa",
     "awards.desc":
       "Promotion Benchallal A. Halim a été distinguée pour la qualité de son stand et la présentation de ses projets lors du salon professionnel de la promotion immobilière à Béjaïa.",
+    "awards.fair2026.title": "Participation au foire des batiment bejaia 2026 (iriscom)",
 
     "sim3d.subtitle": "Visite immersive",
     "sim3d.title": "Simulation 3D interactive",
@@ -104,7 +105,7 @@ const base: Record<Locale, Dict> = {
     "footer.copyright": "Promotion Immobilière Benchallal A. Halim — P.B.A. All rights reserved.",
     "footer.link.residence": "The Residence",
     "footer.link.plans": "Floor Plans",
-    "footer.link.commercial": "Commercial Units",
+    "footer.link.commercial": "Apartments",
     "footer.link.location": "Location",
 
     "about.subtitle": "Who we are",
@@ -125,6 +126,7 @@ const base: Record<Locale, Dict> = {
     "awards.event": "8th edition of the Real Estate Developer Trade Fair in Béjaïa",
     "awards.desc":
       "Promotion Benchallal A. Halim was recognized for the quality of its stand and project presentation at Béjaïa's professional real estate fair.",
+    "awards.fair2026.title": "Participation in the Béjaïa 2026 Building Fair (Iriscom)",
 
     "sim3d.subtitle": "Immersive visit",
     "sim3d.title": "Interactive 3D simulation",
@@ -201,6 +203,7 @@ const base: Record<Locale, Dict> = {
     "awards.event": "الدورة الثامنة لصالون المطور العقاري ببجاية",
     "awards.desc":
       "تم تكريم شركة بن شلال أ. حليم لجودة جناحها وعرض مشاريعها في المعرض المهني للترويج العقاري ببجاية.",
+    "awards.fair2026.title": "المشاركة في معرض البناء بجاية 2026 (iriscom)",
 
     "sim3d.subtitle": "زيارة غامرة",
     "sim3d.title": "محاكاة ثلاثية الأبعاد تفاعلية",

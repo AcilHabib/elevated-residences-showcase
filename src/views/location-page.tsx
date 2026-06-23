@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Waves, Car, ShoppingBag, GraduationCap, Heart, Building2 } from "lucide-react";
+import { MapPin, Route, GraduationCap, Mail, Stethoscope } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CompanyPortfolioSection } from "@/components/CompanyPortfolioSection";
 import { QrCodeCard } from "@/components/QrCodeCard";
@@ -16,8 +16,10 @@ import {
   RESIDENCE_COORDS,
   RESIDENCE_NAME,
 } from "@/lib/site";
+import { Building2 } from "lucide-react";
 
-const nearbyIcons = [Waves, ShoppingBag, GraduationCap, Heart, Car, MapPin];
+const nearbyIcons = [Route, GraduationCap, GraduationCap, Mail, Stethoscope];
+const nearbyCount = 5;
 
 export default function LocationPage() {
   const { t } = useI18n();
@@ -68,7 +70,7 @@ export default function LocationPage() {
                     {RESIDENCE_NAME}
                   </p>
                   <p className="mt-2 font-display text-2xl md:text-3xl">{RESIDENCE_COORDS.place}</p>
-                  <p className="mt-1 text-sm text-foreground/80">{t("location.coast")}</p>
+                  <p className="mt-1 text-sm text-foreground/80">{t("location.siteHighlight")}</p>
                 </div>
                 <div className="glass-strong rounded-2xl px-5 py-3">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
@@ -149,19 +151,24 @@ export default function LocationPage() {
             <h2 className="font-display text-4xl md:text-5xl mb-12">{t("location.nearbyTitle")}</h2>
           </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {nearbyIcons.map((Icon, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="group flex items-center gap-5 p-6 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold group-hover:scale-110 transition-transform">
-                    <Icon className="h-6 w-6" />
+            {Array.from({ length: nearbyCount }, (_, i) => {
+              const Icon = nearbyIcons[i] ?? MapPin;
+              const dist = t(`location.nearby.${i}.dist`);
+
+              return (
+                <Reveal key={i} delay={i * 0.05}>
+                  <div className="group flex items-center gap-5 p-6 rounded-2xl bg-card border border-border hover:border-gold/40 transition-all">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-gold group-hover:scale-110 transition-transform">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl">{t(`location.nearby.${i}.name`)}</h3>
+                      {dist ? <p className="text-sm text-gold mt-0.5">{dist}</p> : null}
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl">{t(`location.nearby.${i}.name`)}</h3>
-                    <p className="text-sm text-gold mt-0.5">{t(`location.nearby.${i}.dist`)}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

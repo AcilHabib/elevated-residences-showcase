@@ -26,3 +26,22 @@ export const awardImages: AwardImage[] = [
     caption: "Notre stand au salon",
   },
 ];
+
+export const fairAwardImages: AwardImage[] = [
+  {
+    src: "/images/awards/fair-2026/01.png",
+    alt: "Participation à la foire des bâtiments Béjaïa 2026 — Iriscom",
+  },
+  {
+    src: "/images/awards/fair-2026/02.png",
+    alt: "Visite officielle au stand P.B.A — foire des bâtiments Béjaïa 2026",
+  },
+  {
+    src: "/images/awards/fair-2026/03.png",
+    alt: "Stand Résidence Plage de Rêve — foire des bâtiments Béjaïa 2026",
+  },
+  {
+    src: "/images/awards/fair-2026/04.png",
+    alt: "Présentation des maquettes — foire des bâtiments Béjaïa 2026",
+  },
+];

@@ -75,7 +75,7 @@ export const COMPANY_PROJECTS: CompanyProject[] = [
     highlightKey: "portfolio.plage.highlight",
     statusKey: "portfolio.plage.status",
     units: RESIDENCE_UNITS,
-    status: "soon",
+    status: "in_progress",
     featured: true,
   },
 ];

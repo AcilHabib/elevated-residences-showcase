@@ -3,7 +3,7 @@
 import { Award } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
-import { awardImages } from "@/lib/awards";
+import { awardImages, fairAwardImages } from "@/lib/awards";
 import { useI18n } from "@/lib/i18n";
 
 export function AwardsSection() {
@@ -42,6 +42,36 @@ export function AwardsSection() {
                 <div className="p-4 border-t border-border">
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     {t(`awards.caption.${i}`)}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <div className="mt-16 mb-8">
+            <h3 className="font-display text-2xl md:text-3xl leading-tight">
+              {t("awards.fair2026.title")}
+            </h3>
+          </div>
+        </Reveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {fairAwardImages.map((img, i) => (
+            <Reveal key={img.src} delay={i * 0.06}>
+              <div className="group relative overflow-hidden rounded-2xl border border-border bg-card hover:border-gold/40 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-luxury)]">
+                <div className="aspect-[4/3] overflow-hidden bg-muted/30">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4 border-t border-border">
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    {t("awards.fair2026.title")}
                   </p>
                 </div>
               </div>

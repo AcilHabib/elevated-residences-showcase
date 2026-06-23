@@ -1,7 +1,7 @@
 export const APARTMENT_SURFACES = [
   {
     type: "F2",
-    surfaces: [49.75, 56.23, 67.89, 68.02],
+    surfaces: [49.75, 56.23, 67.89, 60.02],
   },
   {
     type: "F3",

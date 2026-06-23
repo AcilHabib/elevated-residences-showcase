@@ -212,9 +212,11 @@ export default function HomePage() {
               <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
                 {t("home.overview.title")}
               </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
-                {t("home.overview.desc")}
-              </p>
+              <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-lg">
+                <p>{t("home.overview.desc.0")}</p>
+                <p>{t("home.overview.desc.1")}</p>
+                <p>{t("home.overview.desc.2")}</p>
+              </div>
               <ul className="mt-8 space-y-3 text-sm">
                 {blockIds.map((id) => (
                   <li key={id} className="flex items-center gap-3">

@@ -64,8 +64,11 @@ const fr: Dict = {
   "home.gallery.subtitle": "Simulations 3D officielles",
   "home.overview.subtitle": "Vue d'ensemble",
   "home.overview.title": "Six blocs résidentiels au cœur d'un écrin paysager",
-  "home.overview.desc":
-    "Pensée comme un véritable village méditerranéen, la Résidence Plage de Rêve déploie 198 logements répartis sur six blocs d'architecture contemporaine autour de jardins luxuriants, de deux piscines paysagères, d'un grand parking, de locaux commerciaux, d'une aire de jeux et d'espaces communs soignés. Un équilibre rare entre intimité et art de vivre.",
+  "home.overview.desc.0":
+    "Village résidentiel de 198 logements répartis sur six blocs allant jusqu'à 30 étages, avec une vue sur la mer Méditerranée.",
+  "home.overview.desc.1":
+    "Profitez de deux piscines, d'un parking sécurisé, de locaux commerciaux, d'une aire de jeux et d'espaces verts.",
+  "home.overview.desc.2": "Découvrez l'implantation des blocs et consultez les plans détaillés.",
   "home.overview.block": "5 étages",
   "home.overview.explore": "Explorer la résidence",
   "home.aerial.alt": "Vue aérienne de la résidence",
@@ -307,8 +310,11 @@ const en: Dict = {
   "home.gallery.subtitle": "Official 3D renderings",
   "home.overview.subtitle": "Overview",
   "home.overview.title": "Six residential blocks in a landscaped setting",
-  "home.overview.desc":
-    "Designed like a true Mediterranean village, Plage de Rêve Residence offers 198 apartments across six contemporary blocks surrounded by lush gardens, two landscaped pools, large secure parking, commercial units, a children's playground and refined common areas. A rare balance of privacy and lifestyle.",
+  "home.overview.desc.0":
+    "A residential village of 198 apartments across six blocks up to 30 floors, with views of the Mediterranean Sea.",
+  "home.overview.desc.1":
+    "Enjoy two pools, secure parking, commercial units, a children's playground and green spaces.",
+  "home.overview.desc.2": "Explore the block layout and view detailed floor plans.",
   "home.overview.block": "5 floors",
   "home.overview.explore": "Explore the residence",
   "home.aerial.alt": "Aerial view of the residence",
@@ -544,8 +550,10 @@ const ar: Dict = {
   "home.gallery.subtitle": "محاكاات ثلاثية الأبعاد رسمية",
   "home.overview.subtitle": "نظرة عامة",
   "home.overview.title": "ستة أبراج سكنية في قلب مساحة خضراء",
-  "home.overview.desc":
-    "مصممة كقرية متوسطية حقيقية، تضم إقامة Plage de Rêve 198 شقة موزعة على ستة أبراج معمارية عصرية محاطة بحدائق ومسبحين منسقين وموقف سيارات واسع ومحلات تجارية وملعب للأطفال ومساحات مشتركة. توازن نادر بين الخصوصية وجودة الحياة.",
+  "home.overview.desc.0":
+    "قرية سكنية تضم 198 شقة موزعة على ستة أبراج تصل إلى 30 طابقاً، مع إطلالة على البحر الأبيض المتوسط.",
+  "home.overview.desc.1": "استمتعوا بمسبحين وموقف آمن ومحلات تجارية وملعب للأطفال ومساحات خضراء.",
+  "home.overview.desc.2": "اكتشفوا مخطط الأبراج واطلعوا على المخططات التفصيلية.",
   "home.overview.block": "5 طوابق",
   "home.overview.explore": "استكشف الإقامة",
   "home.aerial.alt": "منظر جوي للإقامة",

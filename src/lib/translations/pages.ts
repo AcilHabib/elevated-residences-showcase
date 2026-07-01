@@ -226,7 +226,7 @@ const fr: Dict = {
   "awards.alt.3": "Stand P.B.A au Salon du Promoteur Immobilier à Béjaïa",
 
   "portfolio.subtitle": "Nos réalisations",
-  "portfolio.title": "Trois sites",
+  "portfolio.title": "Cinq sites",
   "portfolio.titleAccent": "Benchallal Immo",
   "portfolio.intro":
     "Promotion Benchallal A. Halim développe des résidences de qualité à travers la wilaya de Béjaïa.",
@@ -474,7 +474,7 @@ const en: Dict = {
   "awards.alt.3": "P.B.A stand at the Real Estate Developer Trade Fair in Béjaïa",
 
   "portfolio.subtitle": "Our projects",
-  "portfolio.title": "Three sites",
+  "portfolio.title": "Five sites",
   "portfolio.titleAccent": "Benchallal Immo",
   "portfolio.intro":
     "Promotion Benchallal A. Halim delivers quality residential projects across Béjaïa Province.",
@@ -712,7 +712,7 @@ const ar: Dict = {
   "awards.alt.3": "جناح P.B.A في صالون المطور العقاري ببجاية",
 
   "portfolio.subtitle": "مشاريعنا",
-  "portfolio.title": "ثلاثة مواقع",
+  "portfolio.title": "خمسة مواقع",
   "portfolio.titleAccent": "Benchallal Immo",
   "portfolio.intro": "شركة بن شلال أ. حليم للترويج العقاري تنفذ مشاريع سكنية نوعية في ولاية بجاية.",
   "portfolio.apartments": "شقة",

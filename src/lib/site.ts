@@ -29,7 +29,7 @@ export const COMPANY_QR_SRC = "/images/company-qr.png";
 /** Destination encoded in the official printed QR code */
 export const COMPANY_QR_URL = MAPS_LINK_URL;
 
-export const COMPANY_EMAIL = "promotion.benchallal@gmail.com";
+export const COMPANY_EMAIL = "commercialbenchallal@gmail.com";
 /** RDV & quote requests — commercial department */
 export const COMMERCIAL_EMAIL = "commercialbenchallal@gmail.com";
 export const COMPANY_LEGAL_NAME = "Promotion Benchallal A. Halim";
@@ -77,6 +77,22 @@ export const COMPANY_PROJECTS: CompanyProject[] = [
     units: RESIDENCE_UNITS,
     status: "in_progress",
     featured: true,
+  },
+  {
+    id: "belle-vue",
+    nameKey: "portfolio.belle-vue.name",
+    locationKey: "portfolio.belle-vue.location",
+    statusKey: "portfolio.status.done",
+    units: 12,
+    status: "soon",
+  },
+  {
+    id: "jolie-vue",
+    nameKey: "portfolio.jolie-vue.name",
+    locationKey: "portfolio.jolie-vue.location",
+    statusKey: "portfolio.status.done",
+    units: 10,
+    status: "soon",
   },
 ];
 

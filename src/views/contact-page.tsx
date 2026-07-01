@@ -158,7 +158,7 @@ export default function ContactPage() {
 
             <Reveal delay={0.16}>
               <a
-                href="mailto:promotion.benchallal@gmail.com"
+                href="mailto:commercialbenchallal@gmail.com"
                 className="flex items-center gap-4 p-6 rounded-3xl bg-card border border-border hover:border-gold/40 transition-colors"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     {t("contact.generalEmail")}
                   </p>
-                  <p className="font-display text-lg break-all">promotion.benchallal@gmail.com</p>
+                  <p className="font-display text-lg break-all">commercialbenchallal@gmail.com</p>
                 </div>
               </a>
             </Reveal>

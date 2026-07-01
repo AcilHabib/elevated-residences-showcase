@@ -10,6 +10,7 @@ import {
   apartmentPlanCategories,
   getApartmentCategory,
   getPlanVariant,
+  isPlanImageFile,
   type ApartmentCategory,
 } from "@/lib/apartment-plans";
 import { isUnitAvailable } from "@/lib/availability.types";
@@ -280,6 +281,14 @@ export default function PlansPage() {
                       <img
                         src={activeVariant.image3d}
                         alt={`${activeCategory?.label} ${t("plans.type")} ${activeVariant.type} — ${t("plans.view3d")}`}
+                        className="max-h-[78vh] w-full object-contain"
+                      />
+                    </div>
+                  ) : isPlanImageFile(activeVariant.pdf) ? (
+                    <div className="flex min-h-[480px] items-center justify-center rounded-xl border border-border bg-white p-2">
+                      <img
+                        src={activeVariant.pdf}
+                        alt={`${activeCategory?.label} ${t("plans.type")} ${activeVariant.type} — ${t("plans.viewPdf")}`}
                         className="max-h-[78vh] w-full object-contain"
                       />
                     </div>

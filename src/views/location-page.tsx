@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin, Route, GraduationCap, Mail, Stethoscope } from "lucide-react";
+import { MapPin, Route, GraduationCap, Mail, Stethoscope, Shield, Siren } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { CompanyPortfolioSection } from "@/components/CompanyPortfolioSection";
 import { QrCodeCard } from "@/components/QrCodeCard";
@@ -18,8 +18,8 @@ import {
 } from "@/lib/site";
 import { Building2 } from "lucide-react";
 
-const nearbyIcons = [Route, GraduationCap, GraduationCap, Mail, Stethoscope];
-const nearbyCount = 5;
+const nearbyIcons = [Route, GraduationCap, GraduationCap, Mail, Stethoscope, Shield, Siren];
+const nearbyCount = 7;
 
 export default function LocationPage() {
   const { t } = useI18n();

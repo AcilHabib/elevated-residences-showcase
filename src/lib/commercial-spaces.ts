@@ -16,7 +16,7 @@ export const APARTMENT_SURFACES = [
 export const RETAIL_SPACES = [
   { id: "01", surface: 49.97 },
   { id: "02", surface: 27.3 },
-  { id: "03", surface: 27.3 },
+
   { id: "04", surface: 32.54 },
   { id: "05", surface: 27.16 },
 ] as const;

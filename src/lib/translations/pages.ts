@@ -65,7 +65,7 @@ const fr: Dict = {
   "home.overview.subtitle": "Vue d'ensemble",
   "home.overview.title": "Six blocs résidentiels au cœur d'un écrin paysager",
   "home.overview.desc.0":
-    "Village résidentiel de 198 logements répartis sur six blocs allant jusqu'à 30 étages, avec une vue sur la mer Méditerranée.",
+    "Village résidentiel de 198 logements répartis sur six blocs allant sur 5 étages, avec une vue sur la mer Méditerranée.",
   "home.overview.desc.1":
     "Profitez de deux piscines, d'un parking sécurisé, de locaux commerciaux, d'un air de jeux et d'espaces verts.",
   "home.overview.desc.2": "Découvrez l'implantation des blocs et consultez les plans détaillés.",
@@ -101,7 +101,7 @@ const fr: Dict = {
   "residence.title": "Une architecture pensée comme",
   "residence.titleAccent": "un art de vivre",
   "residence.intro.0":
-    "Programme résidentiel de 198 logements répartis sur six blocs allant jusqu'à 30 étages, avec une vue sur la mer Méditerranée.",
+    "Programme résidentiel de 198 logements répartis sur six blocs allant sur 5 étages, avec une vue sur la mer Méditerranée.",
   "residence.intro.1":
     "Profitez de deux piscines, d'un parking sécurisé, de locaux commerciaux, d'un air de jeux et d'espaces verts.",
   "residence.intro.2": "Découvrez l'implantation des blocs et consultez les plans détaillés.",
@@ -176,6 +176,10 @@ const fr: Dict = {
   "location.nearby.3.dist": "",
   "location.nearby.4.name": "Polyclinique",
   "location.nearby.4.dist": "",
+  "location.nearby.5.name": "Gendarmerie",
+  "location.nearby.5.dist": "",
+  "location.nearby.6.name": "Protection civile",
+  "location.nearby.6.dist": "",
 
   "faq.subtitle": "Questions fréquentes",
   "faq.title": "Toutes les",
@@ -241,6 +245,10 @@ const fr: Dict = {
   "portfolio.plage.status": "En cours de construction",
   "portfolio.plage.highlight":
     "Projet actuel — 198 logements, résidence de prestige à 500 m de la route nationale, en cours de construction.",
+  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.location": "Béjaïa",
+  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.location": "Béjaïa",
 
   "qr.title": "QR code officiel",
   "qr.desc": "Scannez pour ouvrir la localisation Google Maps du projet à Beni Ksila.",
@@ -422,6 +430,10 @@ const en: Dict = {
   "location.nearby.3.dist": "",
   "location.nearby.4.name": "Polyclinic",
   "location.nearby.4.dist": "",
+  "location.nearby.5.name": "Gendarmerie",
+  "location.nearby.5.dist": "",
+  "location.nearby.6.name": "Civil protection",
+  "location.nearby.6.dist": "",
 
   "faq.subtitle": "Frequently asked questions",
   "faq.title": "All the",
@@ -481,6 +493,10 @@ const en: Dict = {
   "portfolio.plage.status": "Under construction",
   "portfolio.plage.highlight":
     "Current project — 198 apartments, prestige residence 500 m from the national road, under construction.",
+  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.location": "Béjaïa",
+  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.location": "Béjaïa",
 
   "qr.title": "Official QR code",
   "qr.desc": "Scan to open the Google Maps location of the project in Beni Ksila.",
@@ -655,6 +671,10 @@ const ar: Dict = {
   "location.nearby.3.dist": "",
   "location.nearby.4.name": "المستوصف",
   "location.nearby.4.dist": "",
+  "location.nearby.5.name": "الدرك الوطني",
+  "location.nearby.5.dist": "",
+  "location.nearby.6.name": "الحماية المدنية",
+  "location.nearby.6.dist": "",
 
   "faq.subtitle": "الأسئلة الشائعة",
   "faq.title": "جميع",
@@ -710,6 +730,10 @@ const ar: Dict = {
   "portfolio.plage.status": "قيد الإنشاء",
   "portfolio.plage.highlight":
     "المشروع الحالي — 198 شقة، إقامة راقية على بعد 500 م من الطريق الوطني، قيد الإنشاء.",
+  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.location": "بجاية",
+  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.location": "بجاية",
 
   "qr.title": "رمز QR الرسمي",
   "qr.desc": "امسح الرمز لفتح موقع المشروع على خرائط Google في بني كسيلة.",

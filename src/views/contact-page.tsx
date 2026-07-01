@@ -156,23 +156,6 @@ export default function ContactPage() {
               </a>
             </Reveal>
 
-            <Reveal delay={0.16}>
-              <a
-                href="mailto:commercialbenchallal@gmail.com"
-                className="flex items-center gap-4 p-6 rounded-3xl bg-card border border-border hover:border-gold/40 transition-colors"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {t("contact.generalEmail")}
-                  </p>
-                  <p className="font-display text-lg break-all">commercialbenchallal@gmail.com</p>
-                </div>
-              </a>
-            </Reveal>
-
             <Reveal delay={0.22}>
               <div className="flex items-center gap-4 p-6 rounded-3xl bg-card border border-border">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">

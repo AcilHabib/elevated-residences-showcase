@@ -48,7 +48,8 @@ const base: Record<Locale, Dict> = {
     "awards.event": "8ème édition du Salon du Promoteur Immobilier à Béjaïa",
     "awards.desc":
       "Promotion Benchallal A. Halim a été distinguée pour la qualité de son stand et la présentation de ses projets lors du salon professionnel de la promotion immobilière à Béjaïa.",
-    "awards.fair2026.title": "Participation au Salon National du Bâtiment & de l'Immobilier ( Iriscom )",
+    "awards.fair2026.title":
+      "Participation au Salon National du Bâtiment & de l'Immobilier ( Iriscom )",
 
     "sim3d.subtitle": "Visite immersive",
     "sim3d.title": "Simulation 3D interactive",
@@ -126,7 +127,8 @@ const base: Record<Locale, Dict> = {
     "awards.event": "8th edition of the Real Estate Developer Trade Fair in Béjaïa",
     "awards.desc":
       "Promotion Benchallal A. Halim was recognized for the quality of its stand and project presentation at Béjaïa's professional real estate fair.",
-    "awards.fair2026.title": "Participation in the National Building & Real Estate Fair ( Iriscom )",
+    "awards.fair2026.title":
+      "Participation in the National Building & Real Estate Fair ( Iriscom )",
 
     "sim3d.subtitle": "Immersive visit",
     "sim3d.title": "Interactive 3D simulation",

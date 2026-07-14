@@ -245,9 +245,9 @@ const fr: Dict = {
   "portfolio.plage.status": "En cours de construction",
   "portfolio.plage.highlight":
     "Projet actuel — 198 logements, résidence de prestige à 500 m de la route nationale, en cours de construction.",
-  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.name": "Belle vue",
   "portfolio.belle-vue.location": "Béjaïa",
-  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.name": "Jolie vue",
   "portfolio.jolie-vue.location": "Béjaïa",
 
   "qr.title": "QR code officiel",
@@ -493,9 +493,9 @@ const en: Dict = {
   "portfolio.plage.status": "Under construction",
   "portfolio.plage.highlight":
     "Current project — 198 apartments, prestige residence 500 m from the national road, under construction.",
-  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.name": "Belle vue",
   "portfolio.belle-vue.location": "Béjaïa",
-  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.name": "Jolie vue",
   "portfolio.jolie-vue.location": "Béjaïa",
 
   "qr.title": "Official QR code",
@@ -730,9 +730,9 @@ const ar: Dict = {
   "portfolio.plage.status": "قيد الإنشاء",
   "portfolio.plage.highlight":
     "المشروع الحالي — 198 شقة، إقامة راقية على بعد 500 م من الطريق الوطني، قيد الإنشاء.",
-  "portfolio.belle-vue.name": "La belle vue",
+  "portfolio.belle-vue.name": "Belle vue",
   "portfolio.belle-vue.location": "بجاية",
-  "portfolio.jolie-vue.name": "La jolie vue",
+  "portfolio.jolie-vue.name": "Jolie vue",
   "portfolio.jolie-vue.location": "بجاية",
 
   "qr.title": "رمز QR الرسمي",

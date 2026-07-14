@@ -145,7 +145,7 @@ const fr: Dict = {
   "commercial.retailTitle": "Locaux commerciaux",
   "commercial.retailSubtitle": "locaux",
   "commercial.retailIntro":
-    "Cinq locaux commerciaux au rez-de-chaussée, adaptés à différentes activités.",
+    "Quatre locaux commerciaux au rez-de-chaussée, adaptés à différentes activités.",
   "commercial.retailLabel": "Local",
 
   "location.subtitle": "Localisation",
@@ -319,7 +319,7 @@ const en: Dict = {
   "home.overview.subtitle": "Overview",
   "home.overview.title": "Six residential blocks in a landscaped setting",
   "home.overview.desc.0":
-    "A residential village of 198 apartments across six blocks up to 30 floors, with views of the Mediterranean Sea.",
+    "A residential village of 198 apartments across six blocks of 5 floors, with views of the Mediterranean Sea.",
   "home.overview.desc.1":
     "Enjoy two pools, secure parking, commercial units, a children's playground and green spaces.",
   "home.overview.desc.2": "Explore the block layout and view detailed floor plans.",
@@ -355,7 +355,7 @@ const en: Dict = {
   "residence.title": "Architecture conceived as",
   "residence.titleAccent": "an art of living",
   "residence.intro.0":
-    "A residential programme of 198 apartments across six blocks up to 30 floors, with views of the Mediterranean Sea.",
+    "A residential programme of 198 apartments across six blocks of 5 floors, with views of the Mediterranean Sea.",
   "residence.intro.1":
     "Enjoy two pools, secure parking, commercial units, a children's playground and green spaces.",
   "residence.intro.2": "Explore the block layout and view detailed floor plans.",
@@ -399,7 +399,7 @@ const en: Dict = {
   "commercial.retailTitle": "Commercial units",
   "commercial.retailSubtitle": "units",
   "commercial.retailIntro":
-    "Five ground-floor commercial units suited to a range of business activities.",
+    "Four ground-floor commercial units suited to a range of business activities.",
   "commercial.retailLabel": "Unit",
 
   "location.subtitle": "Location",
@@ -567,7 +567,7 @@ const ar: Dict = {
   "home.overview.subtitle": "نظرة عامة",
   "home.overview.title": "ستة أبراج سكنية في قلب مساحة خضراء",
   "home.overview.desc.0":
-    "قرية سكنية تضم 198 شقة موزعة على ستة أبراج تصل إلى 30 طابقاً، مع إطلالة على البحر الأبيض المتوسط.",
+    "قرية سكنية تضم 198 شقة موزعة على ستة أبراج من 5 طوابق، مع إطلالة على البحر الأبيض المتوسط.",
   "home.overview.desc.1": "استمتعوا بمسبحين وموقف آمن ومحلات تجارية وملعب للأطفال ومساحات خضراء.",
   "home.overview.desc.2": "اكتشفوا مخطط الأبراج واطلعوا على المخططات التفصيلية.",
   "home.overview.block": "5 طوابق",
@@ -601,7 +601,7 @@ const ar: Dict = {
   "residence.title": "عمارة مصممة كـ",
   "residence.titleAccent": "فن للعيش",
   "residence.intro.0":
-    "برنامج سكني يضم 198 شقة موزعة على ستة أبراج تصل إلى 30 طابقاً، مع إطلالة على البحر الأبيض المتوسط.",
+    "برنامج سكني يضم 198 شقة موزعة على ستة أبراج من 5 طوابق، مع إطلالة على البحر الأبيض المتوسط.",
   "residence.intro.1": "استمتعوا بمسبحين وموقف آمن ومحلات تجارية وملعب للأطفال ومساحات خضراء.",
   "residence.intro.2": "اكتشفوا مخطط الأبراج واطلعوا على المخططات التفصيلية.",
   "residence.mapAlt": "مخطط التوزيع",
@@ -640,7 +640,7 @@ const ar: Dict = {
   "commercial.apartmentLabel": "شقة",
   "commercial.retailTitle": "المحلات التجارية",
   "commercial.retailSubtitle": "محلات",
-  "commercial.retailIntro": "خمسة محلات تجارية في الطابق الأرضي، مناسبة لأنشطة متنوعة.",
+  "commercial.retailIntro": "أربعة محلات تجارية في الطابق الأرضي، مناسبة لأنشطة متنوعة.",
   "commercial.retailLabel": "محل",
 
   "location.subtitle": "الموقع",

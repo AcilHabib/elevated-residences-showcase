@@ -18,7 +18,7 @@ import {
   ChefHat,
   Gem,
   Layers,
-  Download,
+  Calendar,
   Mail,
   Route,
   Store,
@@ -121,11 +121,11 @@ export default function HomePage() {
                 <ArrowRight className="h-4 w-4 shrink-0" />
               </Link>
               <a
-                href="#brochure"
+                href="#rdv"
                 className="group luxury-btn flex-1 sm:flex-initial sm:min-w-[14rem] sm:max-w-[16rem] glass text-foreground hover:border-gold/50 transition-colors"
               >
-                <Download className="h-4 w-4 shrink-0" />
-                <span>{t("cta.brochure")}</span>
+                <Calendar className="h-4 w-4 shrink-0" />
+                <span>{t("cta.rdv")}</span>
               </a>
             </div>
           </div>
@@ -299,7 +299,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="brochure" className="relative py-32">
+      <section id="rdv" className="relative py-32">
         <div className="container-luxury">
           <Reveal>
             <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary via-primary to-[oklch(from_var(--primary)_calc(l-0.1)_c_h)] p-12 md:p-20 text-center">
